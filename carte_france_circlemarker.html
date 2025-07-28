@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_2ede1d739b70df59c3e02b6a93dedd02 {
+                #map_d27a7ba5a2986e8478c4eac288dae446 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -73,7 +73,7 @@
         height: 15px;
         margin-right: 8px;
         border-radius: 50%;
-        background: #573909;
+        background: #a8937d;
         border: 1px solid black;
         opacity: 1;
         vertical-align: middle;
@@ -100,22 +100,42 @@
         opacity: 1;
         vertical-align: middle;
     "></span> Autre<br>
-    <span style="margin-left: 23px; font-size: 13px;">Note moyenne</span>
+        <span style="
+    display: inline-block;
+    margin-left: 3px;
+">
+    <span style="font-weight: bold; margin-right: 16px;">8</span>Note moyenne
+</span>
      </div>
     
-            <div class="folium-map" id="map_2ede1d739b70df59c3e02b6a93dedd02" ></div>
+<div style="position: fixed;
+            top: 20px; right: 20px;
+            z-index:9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: Didot, serif;
+            font-size: 20px;">
+    <div>
+        <div><strong>KittyChercheCookie</strong></div>
+        <div style="font-style: italic; font-size: 15px;">La Map</div>
+    </div>
+    <img src="data:image/png;base64,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" style="height: 40px;">
+</div>
+    
+            <div class="folium-map" id="map_d27a7ba5a2986e8478c4eac288dae446" ></div>
         
 </body>
 <script>
     
     
-            var map_2ede1d739b70df59c3e02b6a93dedd02 = L.map(
-                "map_2ede1d739b70df59c3e02b6a93dedd02",
+            var map_d27a7ba5a2986e8478c4eac288dae446 = L.map(
+                "map_d27a7ba5a2986e8478c4eac288dae446",
                 {
-                    center: [46.6031, 1.8883],
+                    center: [48.8566, 2.3522],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 6,
+  "zoom": 12,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -127,7 +147,7 @@
 
         
     
-            var tile_layer_257aaa14a6841d0e56cecef8bd8dfcbe = L.tileLayer(
+            var tile_layer_6dca24396748f272d2b1f052858709e7 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -144,124 +164,3192 @@
             );
         
     
-            tile_layer_257aaa14a6841d0e56cecef8bd8dfcbe.addTo(map_2ede1d739b70df59c3e02b6a93dedd02);
+            tile_layer_6dca24396748f272d2b1f052858709e7.addTo(map_d27a7ba5a2986e8478c4eac288dae446);
         
     
-            var circle_marker_bdb820cd3ee64dc81486700814749e27 = L.circleMarker(
-                [48.8566, 2.3522],
-                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#755420", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 0.5}
-            ).addTo(map_2ede1d739b70df59c3e02b6a93dedd02);
+            var circle_marker_bc900b084d3def118e53703476585b79 = L.circleMarker(
+                [48.8570174, 2.3556486],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
         
     
-        var popup_9afda1b07ababe01da3245dcccd4d3db = L.popup({
+        var popup_1a3520317d3210e1384f4fd41d22234b = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_f774092924c33d70fe97282982bec54f = $(`<div id="html_f774092924c33d70fe97282982bec54f" style="width: 100.0%; height: 100.0%;"><b>Paris</b></div>`)[0];
-                popup_9afda1b07ababe01da3245dcccd4d3db.setContent(html_f774092924c33d70fe97282982bec54f);
+                var html_343763d7aa22d4ef728982650f8fe31b = $(`<div id="html_343763d7aa22d4ef728982650f8fe31b" style="width: 100.0%; height: 100.0%;"><b>Bagelstein</b></div>`)[0];
+                popup_1a3520317d3210e1384f4fd41d22234b.setContent(html_343763d7aa22d4ef728982650f8fe31b);
             
         
 
-        circle_marker_bdb820cd3ee64dc81486700814749e27.bindPopup(popup_9afda1b07ababe01da3245dcccd4d3db)
+        circle_marker_bc900b084d3def118e53703476585b79.bindPopup(popup_1a3520317d3210e1384f4fd41d22234b)
         ;
 
         
     
     
-            var marker_cbc7799580c0a497e670798f26e9e4e9 = L.marker(
-                [48.8566, 2.3522],
+            circle_marker_bc900b084d3def118e53703476585b79.bindTooltip(
+                `<div>
+                     Bagelstein
+                 </div>`,
                 {
+  "sticky": true,
 }
-            ).addTo(map_2ede1d739b70df59c3e02b6a93dedd02);
+            );
         
     
-            var div_icon_f042e91221c7dbec7623e306ca524c29 = L.divIcon({
-  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 12px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    color: black;\n                \"\u003e\n                    1\n                \u003c/div\u003e\n            ",
+            var marker_fe21d4b5c34f7a44395ffb4119048b16 = L.marker(
+                [48.8570174, 2.3556486],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_7a19540a12a9f9a0234f6d225590d174 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
   "className": "empty",
 });
         
     
-                marker_cbc7799580c0a497e670798f26e9e4e9.setIcon(div_icon_f042e91221c7dbec7623e306ca524c29);
+                marker_fe21d4b5c34f7a44395ffb4119048b16.setIcon(div_icon_7a19540a12a9f9a0234f6d225590d174);
             
     
-            var circle_marker_6ad96e27ae3e9fad14d352fda37e8d89 = L.circleMarker(
-                [45.75, 4.85],
-                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#755420", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 0.5}
-            ).addTo(map_2ede1d739b70df59c3e02b6a93dedd02);
+            var circle_marker_886c3a179eecd44a92e658ffa45c448f = L.circleMarker(
+                [48.8651321, 2.3328956],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
         
     
-        var popup_5ab883a086ed9353c31bc5619fcde68e = L.popup({
+        var popup_46b99bb4152600fcd6821ff7e2fc452f = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_148d94a339307112eb5c18d9ab156182 = $(`<div id="html_148d94a339307112eb5c18d9ab156182" style="width: 100.0%; height: 100.0%;"><b>Lyon</b></div>`)[0];
-                popup_5ab883a086ed9353c31bc5619fcde68e.setContent(html_148d94a339307112eb5c18d9ab156182);
+                var html_5f8dd649e32d4c076a822d99e0577689 = $(`<div id="html_5f8dd649e32d4c076a822d99e0577689" style="width: 100.0%; height: 100.0%;"><b>Bagelstein</b></div>`)[0];
+                popup_46b99bb4152600fcd6821ff7e2fc452f.setContent(html_5f8dd649e32d4c076a822d99e0577689);
             
         
 
-        circle_marker_6ad96e27ae3e9fad14d352fda37e8d89.bindPopup(popup_5ab883a086ed9353c31bc5619fcde68e)
+        circle_marker_886c3a179eecd44a92e658ffa45c448f.bindPopup(popup_46b99bb4152600fcd6821ff7e2fc452f)
         ;
 
         
     
     
-            var marker_74f4fad5c8ef2f713dd47e6481ddb455 = L.marker(
-                [45.75, 4.85],
+            circle_marker_886c3a179eecd44a92e658ffa45c448f.bindTooltip(
+                `<div>
+                     Bagelstein
+                 </div>`,
                 {
+  "sticky": true,
 }
-            ).addTo(map_2ede1d739b70df59c3e02b6a93dedd02);
+            );
         
     
-            var div_icon_cdb4cb243619da81bc723174c64138b9 = L.divIcon({
-  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 12px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    color: black;\n                \"\u003e\n                    2\n                \u003c/div\u003e\n            ",
+            var marker_5c01599fb71e9a9e5a18dd080f05b675 = L.marker(
+                [48.8651321, 2.3328956],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_c5a443128d2d614a0c5cdc1e9f1ed590 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
   "className": "empty",
 });
         
     
-                marker_74f4fad5c8ef2f713dd47e6481ddb455.setIcon(div_icon_cdb4cb243619da81bc723174c64138b9);
+                marker_5c01599fb71e9a9e5a18dd080f05b675.setIcon(div_icon_c5a443128d2d614a0c5cdc1e9f1ed590);
             
     
-            var circle_marker_f4176672824c66ebed39e6c9dde132c0 = L.circleMarker(
-                [43.3, 5.4],
-                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a8937d", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 0.5}
-            ).addTo(map_2ede1d739b70df59c3e02b6a93dedd02);
+            var circle_marker_09b0e5c55aeedf1ef3a4fb472e5026ad = L.circleMarker(
+                [48.86951089999999, 2.3283335],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
         
     
-        var popup_50fd472450827bfca7e83c9096b6d025 = L.popup({
+        var popup_b2f0fc555fd432cad693e0cb840e820e = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_d7a3d5dcc5137652c8481dc5804b9c8b = $(`<div id="html_d7a3d5dcc5137652c8481dc5804b9c8b" style="width: 100.0%; height: 100.0%;"><b>Marseille</b></div>`)[0];
-                popup_50fd472450827bfca7e83c9096b6d025.setContent(html_d7a3d5dcc5137652c8481dc5804b9c8b);
+                var html_8823116182707454b31a580c0db4a1ed = $(`<div id="html_8823116182707454b31a580c0db4a1ed" style="width: 100.0%; height: 100.0%;"><b>Bagelstein</b></div>`)[0];
+                popup_b2f0fc555fd432cad693e0cb840e820e.setContent(html_8823116182707454b31a580c0db4a1ed);
             
         
 
-        circle_marker_f4176672824c66ebed39e6c9dde132c0.bindPopup(popup_50fd472450827bfca7e83c9096b6d025)
+        circle_marker_09b0e5c55aeedf1ef3a4fb472e5026ad.bindPopup(popup_b2f0fc555fd432cad693e0cb840e820e)
         ;
 
         
     
     
-            var marker_c340b3a77c606f62e9b89af484978221 = L.marker(
-                [43.3, 5.4],
+            circle_marker_09b0e5c55aeedf1ef3a4fb472e5026ad.bindTooltip(
+                `<div>
+                     Bagelstein
+                 </div>`,
                 {
+  "sticky": true,
 }
-            ).addTo(map_2ede1d739b70df59c3e02b6a93dedd02);
+            );
         
     
-            var div_icon_cfcce8681ff9371f311bb99e8ecdd886 = L.divIcon({
-  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 12px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    color: black;\n                \"\u003e\n                    3\n                \u003c/div\u003e\n            ",
+            var marker_dc54f8d9c47c8d7245d2a655354c2109 = L.marker(
+                [48.86951089999999, 2.3283335],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_cb3cdc1bc70e7bd9386da29206749b61 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
   "className": "empty",
 });
         
     
-                marker_c340b3a77c606f62e9b89af484978221.setIcon(div_icon_cfcce8681ff9371f311bb99e8ecdd886);
+                marker_dc54f8d9c47c8d7245d2a655354c2109.setIcon(div_icon_cb3cdc1bc70e7bd9386da29206749b61);
+            
+    
+            var circle_marker_74daddd1a4d8f1f44f3f5b3343530c3e = L.circleMarker(
+                [48.86428350000001, 2.3412258],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_e98c717ac5c30def9ef345efcaa2ed83 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f4bc33d8208fcf664fc5f673c317c3a = $(`<div id="html_3f4bc33d8208fcf664fc5f673c317c3a" style="width: 100.0%; height: 100.0%;"><b>Baguett. by Maison Kayser</b></div>`)[0];
+                popup_e98c717ac5c30def9ef345efcaa2ed83.setContent(html_3f4bc33d8208fcf664fc5f673c317c3a);
+            
+        
+
+        circle_marker_74daddd1a4d8f1f44f3f5b3343530c3e.bindPopup(popup_e98c717ac5c30def9ef345efcaa2ed83)
+        ;
+
+        
+    
+    
+            circle_marker_74daddd1a4d8f1f44f3f5b3343530c3e.bindTooltip(
+                `<div>
+                     Baguett. by Maison Kayser
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8dd2c208e7e36624375852b6226fb619 = L.marker(
+                [48.86428350000001, 2.3412258],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_f6cdd01e132483c5ad45dee019d92de7 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_8dd2c208e7e36624375852b6226fb619.setIcon(div_icon_f6cdd01e132483c5ad45dee019d92de7);
+            
+    
+            var circle_marker_16c1a6b8f4d3204d5e2407863cebe34f = L.circleMarker(
+                [48.8581768, 2.3561421],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_cb007b5feb3c5f2cd273417f8cc32330 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd4fa7221579ab17fd063a9f1b77190b = $(`<div id="html_bd4fa7221579ab17fd063a9f1b77190b" style="width: 100.0%; height: 100.0%;"><b>Benedict</b></div>`)[0];
+                popup_cb007b5feb3c5f2cd273417f8cc32330.setContent(html_bd4fa7221579ab17fd063a9f1b77190b);
+            
+        
+
+        circle_marker_16c1a6b8f4d3204d5e2407863cebe34f.bindPopup(popup_cb007b5feb3c5f2cd273417f8cc32330)
+        ;
+
+        
+    
+    
+            circle_marker_16c1a6b8f4d3204d5e2407863cebe34f.bindTooltip(
+                `<div>
+                     Benedict
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_85f0a934ab3df185a8c368d2f8e941c3 = L.marker(
+                [48.8581768, 2.3561421],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_256add8ebc7145adefa0becdc4ba6919 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_85f0a934ab3df185a8c368d2f8e941c3.setIcon(div_icon_256add8ebc7145adefa0becdc4ba6919);
+            
+    
+            var circle_marker_7eb74d7b012ef12268a6c5fbcb04b004 = L.circleMarker(
+                [48.87054240000001, 2.3592989],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_dbcfdd4538d980640fc3a542313622ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd73dccb31e3fd7f53075217b565e9f4 = $(`<div id="html_cd73dccb31e3fd7f53075217b565e9f4" style="width: 100.0%; height: 100.0%;"><b>Blondie Coffee Shop</b></div>`)[0];
+                popup_dbcfdd4538d980640fc3a542313622ef.setContent(html_cd73dccb31e3fd7f53075217b565e9f4);
+            
+        
+
+        circle_marker_7eb74d7b012ef12268a6c5fbcb04b004.bindPopup(popup_dbcfdd4538d980640fc3a542313622ef)
+        ;
+
+        
+    
+    
+            circle_marker_7eb74d7b012ef12268a6c5fbcb04b004.bindTooltip(
+                `<div>
+                     Blondie Coffee Shop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9b95b055c5583a67fc4719db8c016f34 = L.marker(
+                [48.87054240000001, 2.3592989],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_13ae8f4685871eb6aa0d1473b6493afd = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_9b95b055c5583a67fc4719db8c016f34.setIcon(div_icon_13ae8f4685871eb6aa0d1473b6493afd);
+            
+    
+            var circle_marker_5e177174b0e861964127fe4d650f2ad8 = L.circleMarker(
+                [48.8766495, 2.3372073],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_8d3343972786ff9c842888107b40b868 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ebe9f133fdede009e8d6fd7cb96a080f = $(`<div id="html_ebe9f133fdede009e8d6fd7cb96a080f" style="width: 100.0%; height: 100.0%;"><b>Blondie Coffee Shop</b></div>`)[0];
+                popup_8d3343972786ff9c842888107b40b868.setContent(html_ebe9f133fdede009e8d6fd7cb96a080f);
+            
+        
+
+        circle_marker_5e177174b0e861964127fe4d650f2ad8.bindPopup(popup_8d3343972786ff9c842888107b40b868)
+        ;
+
+        
+    
+    
+            circle_marker_5e177174b0e861964127fe4d650f2ad8.bindTooltip(
+                `<div>
+                     Blondie Coffee Shop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2681cd35221cd1781abf6cd115f50caa = L.marker(
+                [48.8766495, 2.3372073],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_6f424b324785276af3254d04dfc47527 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_2681cd35221cd1781abf6cd115f50caa.setIcon(div_icon_6f424b324785276af3254d04dfc47527);
+            
+    
+            var circle_marker_04b2693b37eee137d4b3ac2fc4dca3d4 = L.circleMarker(
+                [48.85240020000001, 2.343994200000001],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_90b1fb58dc17ef97c66dd497e0f38db3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c30cda67ea1c35cc759800bcf46916e0 = $(`<div id="html_c30cda67ea1c35cc759800bcf46916e0" style="width: 100.0%; height: 100.0%;"><b>BO&MIE</b></div>`)[0];
+                popup_90b1fb58dc17ef97c66dd497e0f38db3.setContent(html_c30cda67ea1c35cc759800bcf46916e0);
+            
+        
+
+        circle_marker_04b2693b37eee137d4b3ac2fc4dca3d4.bindPopup(popup_90b1fb58dc17ef97c66dd497e0f38db3)
+        ;
+
+        
+    
+    
+            circle_marker_04b2693b37eee137d4b3ac2fc4dca3d4.bindTooltip(
+                `<div>
+                     BO&MIE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_eede3dd14b39c9bc069d7ece69ae0075 = L.marker(
+                [48.85240020000001, 2.343994200000001],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_c9d860db9cd3b42a79554417c1ba92c3 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_eede3dd14b39c9bc069d7ece69ae0075.setIcon(div_icon_c9d860db9cd3b42a79554417c1ba92c3);
+            
+    
+            var circle_marker_92d6fb8cc19872abd7fa82c6e45a33c3 = L.circleMarker(
+                [48.852500200000016, 2.344094200000001],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_974902dedba7d0814814d2548d2637ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0e84b18a0aad1e5c9ea682cd01e9b4f = $(`<div id="html_d0e84b18a0aad1e5c9ea682cd01e9b4f" style="width: 100.0%; height: 100.0%;"><b>BO&MIE</b></div>`)[0];
+                popup_974902dedba7d0814814d2548d2637ff.setContent(html_d0e84b18a0aad1e5c9ea682cd01e9b4f);
+            
+        
+
+        circle_marker_92d6fb8cc19872abd7fa82c6e45a33c3.bindPopup(popup_974902dedba7d0814814d2548d2637ff)
+        ;
+
+        
+    
+    
+            circle_marker_92d6fb8cc19872abd7fa82c6e45a33c3.bindTooltip(
+                `<div>
+                     BO&MIE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f976ba1413981f68a28c0f1c2c4666ab = L.marker(
+                [48.852500200000016, 2.344094200000001],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_929f9f82749f14480909030214b25d1c = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_f976ba1413981f68a28c0f1c2c4666ab.setIcon(div_icon_929f9f82749f14480909030214b25d1c);
+            
+    
+            var circle_marker_5024fc983d3eb512b3f0d5e5e8f959ec = L.circleMarker(
+                [48.8607103, 2.3409906],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_2f64db3b2566f9ea7306209fe24150c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fd950f11f3733ac309d366f16ea1247 = $(`<div id="html_4fd950f11f3733ac309d366f16ea1247" style="width: 100.0%; height: 100.0%;"><b>BO&MIE</b></div>`)[0];
+                popup_2f64db3b2566f9ea7306209fe24150c7.setContent(html_4fd950f11f3733ac309d366f16ea1247);
+            
+        
+
+        circle_marker_5024fc983d3eb512b3f0d5e5e8f959ec.bindPopup(popup_2f64db3b2566f9ea7306209fe24150c7)
+        ;
+
+        
+    
+    
+            circle_marker_5024fc983d3eb512b3f0d5e5e8f959ec.bindTooltip(
+                `<div>
+                     BO&MIE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_53542d93af9aba4a059e5ab1fed8dcec = L.marker(
+                [48.8607103, 2.3409906],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_a6beb659c0cbfb2c812cebbebd64eb96 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_53542d93af9aba4a059e5ab1fed8dcec.setIcon(div_icon_a6beb659c0cbfb2c812cebbebd64eb96);
+            
+    
+            var circle_marker_1c9ba40cfcce24acfc9d134e8bc708e0 = L.circleMarker(
+                [48.860810300000004, 2.3410906000000002],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_f00af88ab201df1c64a1c9c4983328be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_badafdb15e0f058ea9386e3b8fa478fa = $(`<div id="html_badafdb15e0f058ea9386e3b8fa478fa" style="width: 100.0%; height: 100.0%;"><b>BO&MIE</b></div>`)[0];
+                popup_f00af88ab201df1c64a1c9c4983328be.setContent(html_badafdb15e0f058ea9386e3b8fa478fa);
+            
+        
+
+        circle_marker_1c9ba40cfcce24acfc9d134e8bc708e0.bindPopup(popup_f00af88ab201df1c64a1c9c4983328be)
+        ;
+
+        
+    
+    
+            circle_marker_1c9ba40cfcce24acfc9d134e8bc708e0.bindTooltip(
+                `<div>
+                     BO&MIE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6d5aafa2ba2ee71ca52112a10a613055 = L.marker(
+                [48.860810300000004, 2.3410906000000002],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_478d6bb7da8f0e94004a289e6ec97862 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_6d5aafa2ba2ee71ca52112a10a613055.setIcon(div_icon_478d6bb7da8f0e94004a289e6ec97862);
+            
+    
+            var circle_marker_c57e653135fc6016e6f95985b090e45d = L.circleMarker(
+                [48.8868144, 2.2621029],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_770579df5eea81d850e1410e69785cd3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_586925091a42509d3645e05ae67228c7 = $(`<div id="html_586925091a42509d3645e05ae67228c7" style="width: 100.0%; height: 100.0%;"><b>Boulangerie Le Panier</b></div>`)[0];
+                popup_770579df5eea81d850e1410e69785cd3.setContent(html_586925091a42509d3645e05ae67228c7);
+            
+        
+
+        circle_marker_c57e653135fc6016e6f95985b090e45d.bindPopup(popup_770579df5eea81d850e1410e69785cd3)
+        ;
+
+        
+    
+    
+            circle_marker_c57e653135fc6016e6f95985b090e45d.bindTooltip(
+                `<div>
+                     Boulangerie Le Panier
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a713cd7aa9a2db21523436978f0f3ca1 = L.marker(
+                [48.8868144, 2.2621029],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_5505590e4c33979201f484daf6c736c1 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    10\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_a713cd7aa9a2db21523436978f0f3ca1.setIcon(div_icon_5505590e4c33979201f484daf6c736c1);
+            
+    
+            var circle_marker_69a145d16aeab83ec0c4aa44f1af2fef = L.circleMarker(
+                [48.88494060000001, 2.3159464],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_b116e20d4fd2c4bf4f2c5605a9f648e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_789f49ccef1b16efe8dc880644fd4090 = $(`<div id="html_789f49ccef1b16efe8dc880644fd4090" style="width: 100.0%; height: 100.0%;"><b>Brookie Me</b></div>`)[0];
+                popup_b116e20d4fd2c4bf4f2c5605a9f648e3.setContent(html_789f49ccef1b16efe8dc880644fd4090);
+            
+        
+
+        circle_marker_69a145d16aeab83ec0c4aa44f1af2fef.bindPopup(popup_b116e20d4fd2c4bf4f2c5605a9f648e3)
+        ;
+
+        
+    
+    
+            circle_marker_69a145d16aeab83ec0c4aa44f1af2fef.bindTooltip(
+                `<div>
+                     Brookie Me
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_48b2926230013324e07c8a7f095db48e = L.marker(
+                [48.88494060000001, 2.3159464],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_e0a7d4131064c173ed14ebca34cbdbe5 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_48b2926230013324e07c8a7f095db48e.setIcon(div_icon_e0a7d4131064c173ed14ebca34cbdbe5);
+            
+    
+            var circle_marker_13bd8c8132766c6c6cec8da19ff33dc7 = L.circleMarker(
+                [48.866602, 2.306843],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_8de6c61735d42a798615f405b43c544b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ede4940efd03a1147b2a06a17247493 = $(`<div id="html_3ede4940efd03a1147b2a06a17247493" style="width: 100.0%; height: 100.0%;"><b>Café Dior</b></div>`)[0];
+                popup_8de6c61735d42a798615f405b43c544b.setContent(html_3ede4940efd03a1147b2a06a17247493);
+            
+        
+
+        circle_marker_13bd8c8132766c6c6cec8da19ff33dc7.bindPopup(popup_8de6c61735d42a798615f405b43c544b)
+        ;
+
+        
+    
+    
+            circle_marker_13bd8c8132766c6c6cec8da19ff33dc7.bindTooltip(
+                `<div>
+                     Café Dior
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b3e1a42d5cdb10c3327c06013afb063a = L.marker(
+                [48.866602, 2.306843],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_ad18db4452656ce859439c9107e12067 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_b3e1a42d5cdb10c3327c06013afb063a.setIcon(div_icon_ad18db4452656ce859439c9107e12067);
+            
+    
+            var circle_marker_7b773f16b84a4ba90539caf3cc2bbfa1 = L.circleMarker(
+                [48.8640368, 2.3358595],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a8937d", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_5e03eacef3798cc68edb696d92ec98fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f5655f99cdb0c63ae364b9a4507c9c5 = $(`<div id="html_1f5655f99cdb0c63ae364b9a4507c9c5" style="width: 100.0%; height: 100.0%;"><b>Café Kitsuné</b></div>`)[0];
+                popup_5e03eacef3798cc68edb696d92ec98fa.setContent(html_1f5655f99cdb0c63ae364b9a4507c9c5);
+            
+        
+
+        circle_marker_7b773f16b84a4ba90539caf3cc2bbfa1.bindPopup(popup_5e03eacef3798cc68edb696d92ec98fa)
+        ;
+
+        
+    
+    
+            circle_marker_7b773f16b84a4ba90539caf3cc2bbfa1.bindTooltip(
+                `<div>
+                     Café Kitsuné
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_257f8874cc632ed6dcb2e84cc13807ae = L.marker(
+                [48.8640368, 2.3358595],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_e5278d4662b801815dc5c3b6017d0756 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_257f8874cc632ed6dcb2e84cc13807ae.setIcon(div_icon_e5278d4662b801815dc5c3b6017d0756);
+            
+    
+            var circle_marker_f8b0b164e79b2471e33f056bcf3f021b = L.circleMarker(
+                [48.8640368, 2.3357595],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_4922a8350db0ab9b4eca2b2e6d7a848f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6297ee26c5fe17e519bef7976abe0e2d = $(`<div id="html_6297ee26c5fe17e519bef7976abe0e2d" style="width: 100.0%; height: 100.0%;"><b>Café Kitsuné</b></div>`)[0];
+                popup_4922a8350db0ab9b4eca2b2e6d7a848f.setContent(html_6297ee26c5fe17e519bef7976abe0e2d);
+            
+        
+
+        circle_marker_f8b0b164e79b2471e33f056bcf3f021b.bindPopup(popup_4922a8350db0ab9b4eca2b2e6d7a848f)
+        ;
+
+        
+    
+    
+            circle_marker_f8b0b164e79b2471e33f056bcf3f021b.bindTooltip(
+                `<div>
+                     Café Kitsuné
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_51e73956c2c55547966cb09ed917732e = L.marker(
+                [48.8640368, 2.3357595],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_167ae72b32108b62b5f5819cf76fa8d1 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_51e73956c2c55547966cb09ed917732e.setIcon(div_icon_167ae72b32108b62b5f5819cf76fa8d1);
+            
+    
+            var circle_marker_e47f26f4ed697fdacbe89c29e09431d5 = L.circleMarker(
+                [48.8644663, 2.3304945],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a8937d", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_59225bbbec2f68b09f0e8de0d296fbf3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1540d28d990474622fb5e62e1974c552 = $(`<div id="html_1540d28d990474622fb5e62e1974c552" style="width: 100.0%; height: 100.0%;"><b>Café Kitsuné</b></div>`)[0];
+                popup_59225bbbec2f68b09f0e8de0d296fbf3.setContent(html_1540d28d990474622fb5e62e1974c552);
+            
+        
+
+        circle_marker_e47f26f4ed697fdacbe89c29e09431d5.bindPopup(popup_59225bbbec2f68b09f0e8de0d296fbf3)
+        ;
+
+        
+    
+    
+            circle_marker_e47f26f4ed697fdacbe89c29e09431d5.bindTooltip(
+                `<div>
+                     Café Kitsuné
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_937292fa60bd264b9a44ea1ea852e247 = L.marker(
+                [48.8644663, 2.3304945],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_fbbbdc106522dbea7b341ade0c25ef6f = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_937292fa60bd264b9a44ea1ea852e247.setIcon(div_icon_fbbbdc106522dbea7b341ade0c25ef6f);
+            
+    
+            var circle_marker_1c699251a7eb2d12ce103a108676d662 = L.circleMarker(
+                [48.8644663, 2.3303945],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_f92cf351310bc01d8458157a0429ce5f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d8adf8d84be65bd6abe26616f3530a0b = $(`<div id="html_d8adf8d84be65bd6abe26616f3530a0b" style="width: 100.0%; height: 100.0%;"><b>Café Kitsuné</b></div>`)[0];
+                popup_f92cf351310bc01d8458157a0429ce5f.setContent(html_d8adf8d84be65bd6abe26616f3530a0b);
+            
+        
+
+        circle_marker_1c699251a7eb2d12ce103a108676d662.bindPopup(popup_f92cf351310bc01d8458157a0429ce5f)
+        ;
+
+        
+    
+    
+            circle_marker_1c699251a7eb2d12ce103a108676d662.bindTooltip(
+                `<div>
+                     Café Kitsuné
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_dc491cbacbb817256213adebf2c775a2 = L.marker(
+                [48.8644663, 2.3303945],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_467cc6c4b55ba973a3bd63d515285805 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_dc491cbacbb817256213adebf2c775a2.setIcon(div_icon_467cc6c4b55ba973a3bd63d515285805);
+            
+    
+            var circle_marker_0093644f5059626c1629bb1ac17b01cd = L.circleMarker(
+                [48.86557309999999, 2.337251199999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_32416160101dca007f7686f37c1026d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_38b3923bf6a678df7f6fdcc1c870cad3 = $(`<div id="html_38b3923bf6a678df7f6fdcc1c870cad3" style="width: 100.0%; height: 100.0%;"><b>Café Kitsuné</b></div>`)[0];
+                popup_32416160101dca007f7686f37c1026d8.setContent(html_38b3923bf6a678df7f6fdcc1c870cad3);
+            
+        
+
+        circle_marker_0093644f5059626c1629bb1ac17b01cd.bindPopup(popup_32416160101dca007f7686f37c1026d8)
+        ;
+
+        
+    
+    
+            circle_marker_0093644f5059626c1629bb1ac17b01cd.bindTooltip(
+                `<div>
+                     Café Kitsuné
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3dfc1c1f87b91dd890a6a00d0dade6ac = L.marker(
+                [48.86557309999999, 2.337251199999999],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_0e797c3a6d34b62843230e813f5831b1 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_3dfc1c1f87b91dd890a6a00d0dade6ac.setIcon(div_icon_0e797c3a6d34b62843230e813f5831b1);
+            
+    
+            var circle_marker_eaa4c6da5d00a1aaef26abb41a64a709 = L.circleMarker(
+                [48.865673099999995, 2.337351199999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a8937d", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_cad105b4aba0ef455b8caf57c19ecb55 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_34c84cd5d3d16df0f65c8138fcffa353 = $(`<div id="html_34c84cd5d3d16df0f65c8138fcffa353" style="width: 100.0%; height: 100.0%;"><b>Café Kitsuné</b></div>`)[0];
+                popup_cad105b4aba0ef455b8caf57c19ecb55.setContent(html_34c84cd5d3d16df0f65c8138fcffa353);
+            
+        
+
+        circle_marker_eaa4c6da5d00a1aaef26abb41a64a709.bindPopup(popup_cad105b4aba0ef455b8caf57c19ecb55)
+        ;
+
+        
+    
+    
+            circle_marker_eaa4c6da5d00a1aaef26abb41a64a709.bindTooltip(
+                `<div>
+                     Café Kitsuné
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0b2883f2873a8c3b2c2be69ff25183d3 = L.marker(
+                [48.865673099999995, 2.337351199999999],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_b498da37812619455f37b613f9801e3a = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_0b2883f2873a8c3b2c2be69ff25183d3.setIcon(div_icon_b498da37812619455f37b613f9801e3a);
+            
+    
+            var circle_marker_0ea6b465b75b91793320fe048c97031c = L.circleMarker(
+                [48.8669942, 2.3584299],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_9bb9004b9b6266acad904248fb86a2ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_34f0a352094a27419fb0e6bd3622ec32 = $(`<div id="html_34f0a352094a27419fb0e6bd3622ec32" style="width: 100.0%; height: 100.0%;"><b>Café Kitsuné</b></div>`)[0];
+                popup_9bb9004b9b6266acad904248fb86a2ad.setContent(html_34f0a352094a27419fb0e6bd3622ec32);
+            
+        
+
+        circle_marker_0ea6b465b75b91793320fe048c97031c.bindPopup(popup_9bb9004b9b6266acad904248fb86a2ad)
+        ;
+
+        
+    
+    
+            circle_marker_0ea6b465b75b91793320fe048c97031c.bindTooltip(
+                `<div>
+                     Café Kitsuné
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6ca4c86c6424df9ea98b8833dba36992 = L.marker(
+                [48.8669942, 2.3584299],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_cf1861f2e83fc7ac651481504fe3c7f1 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_6ca4c86c6424df9ea98b8833dba36992.setIcon(div_icon_cf1861f2e83fc7ac651481504fe3c7f1);
+            
+    
+            var circle_marker_c89998e49151c9c41c555ad93149e1bf = L.circleMarker(
+                [48.867094200000004, 2.3585299],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a8937d", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_daf57bbc9555eb7931b67422778a2d21 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_412224fb1323d5f06ab22c2141def160 = $(`<div id="html_412224fb1323d5f06ab22c2141def160" style="width: 100.0%; height: 100.0%;"><b>Café Kitsuné</b></div>`)[0];
+                popup_daf57bbc9555eb7931b67422778a2d21.setContent(html_412224fb1323d5f06ab22c2141def160);
+            
+        
+
+        circle_marker_c89998e49151c9c41c555ad93149e1bf.bindPopup(popup_daf57bbc9555eb7931b67422778a2d21)
+        ;
+
+        
+    
+    
+            circle_marker_c89998e49151c9c41c555ad93149e1bf.bindTooltip(
+                `<div>
+                     Café Kitsuné
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d0445080a2ad9b466724de3dd7e022bb = L.marker(
+                [48.867094200000004, 2.3585299],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_c97484a7cea9be6daeaa940699a821cf = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_d0445080a2ad9b466724de3dd7e022bb.setIcon(div_icon_c97484a7cea9be6daeaa940699a821cf);
+            
+    
+            var circle_marker_b1e8605659f8e66884ef63636040ccca = L.circleMarker(
+                [48.86830379999999, 2.3335577],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_19697a4eb49a6513d08e47c996e317d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fedf74c2525f25c34d828a5a6acfbfe4 = $(`<div id="html_fedf74c2525f25c34d828a5a6acfbfe4" style="width: 100.0%; height: 100.0%;"><b>Café Kitsuné</b></div>`)[0];
+                popup_19697a4eb49a6513d08e47c996e317d5.setContent(html_fedf74c2525f25c34d828a5a6acfbfe4);
+            
+        
+
+        circle_marker_b1e8605659f8e66884ef63636040ccca.bindPopup(popup_19697a4eb49a6513d08e47c996e317d5)
+        ;
+
+        
+    
+    
+            circle_marker_b1e8605659f8e66884ef63636040ccca.bindTooltip(
+                `<div>
+                     Café Kitsuné
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0b073bbebd9b795538525f39c81deda0 = L.marker(
+                [48.86830379999999, 2.3335577],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_e3ce2142a4119b7306370cc5d9e82271 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_0b073bbebd9b795538525f39c81deda0.setIcon(div_icon_e3ce2142a4119b7306370cc5d9e82271);
+            
+    
+            var circle_marker_02fb827a8c57592b72022ac6e4c53feb = L.circleMarker(
+                [48.868403799999996, 2.3336577000000003],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a8937d", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_8c451df14e9e4c30a9a4ebffcd7ae729 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9857513092aa9835d6915b9916057dcc = $(`<div id="html_9857513092aa9835d6915b9916057dcc" style="width: 100.0%; height: 100.0%;"><b>Café Kitsuné</b></div>`)[0];
+                popup_8c451df14e9e4c30a9a4ebffcd7ae729.setContent(html_9857513092aa9835d6915b9916057dcc);
+            
+        
+
+        circle_marker_02fb827a8c57592b72022ac6e4c53feb.bindPopup(popup_8c451df14e9e4c30a9a4ebffcd7ae729)
+        ;
+
+        
+    
+    
+            circle_marker_02fb827a8c57592b72022ac6e4c53feb.bindTooltip(
+                `<div>
+                     Café Kitsuné
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_87c57d09bc82fc46ce44b9af7686565c = L.marker(
+                [48.868403799999996, 2.3336577000000003],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_4489e3530b5d4275bc3ceda030c4277f = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_87c57d09bc82fc46ce44b9af7686565c.setIcon(div_icon_4489e3530b5d4275bc3ceda030c4277f);
+            
+    
+            var circle_marker_d05a272a197e6308f1b5f26404ed50d5 = L.circleMarker(
+                [48.8506611, 2.3867109],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_cee8990aa85b8cc9887bcc2dec7252d1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_29b141cdc87d579479bcffcc45806bcc = $(`<div id="html_29b141cdc87d579479bcffcc45806bcc" style="width: 100.0%; height: 100.0%;"><b>Café Singuliers</b></div>`)[0];
+                popup_cee8990aa85b8cc9887bcc2dec7252d1.setContent(html_29b141cdc87d579479bcffcc45806bcc);
+            
+        
+
+        circle_marker_d05a272a197e6308f1b5f26404ed50d5.bindPopup(popup_cee8990aa85b8cc9887bcc2dec7252d1)
+        ;
+
+        
+    
+    
+            circle_marker_d05a272a197e6308f1b5f26404ed50d5.bindTooltip(
+                `<div>
+                     Café Singuliers
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_014cf34eb06f0f1dab73617e8ac168d8 = L.marker(
+                [48.8506611, 2.3867109],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_f6cc90011ea7a637e24b9fce10a209cd = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    10\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_014cf34eb06f0f1dab73617e8ac168d8.setIcon(div_icon_f6cc90011ea7a637e24b9fce10a209cd);
+            
+    
+            var circle_marker_5179ca8f3511b13006a600976e0ee2f6 = L.circleMarker(
+                [48.867705, 2.3330885],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_fff8c5cd462178b6418d2dcb3b12c968 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_738e740dd7400e7e708a880fa0a74a89 = $(`<div id="html_738e740dd7400e7e708a880fa0a74a89" style="width: 100.0%; height: 100.0%;"><b>Cedric Grolet Café</b></div>`)[0];
+                popup_fff8c5cd462178b6418d2dcb3b12c968.setContent(html_738e740dd7400e7e708a880fa0a74a89);
+            
+        
+
+        circle_marker_5179ca8f3511b13006a600976e0ee2f6.bindPopup(popup_fff8c5cd462178b6418d2dcb3b12c968)
+        ;
+
+        
+    
+    
+            circle_marker_5179ca8f3511b13006a600976e0ee2f6.bindTooltip(
+                `<div>
+                     Cedric Grolet Café
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8931ea9a73dfdc93f6aaefbc92e0e2a2 = L.marker(
+                [48.867705, 2.3330885],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_21902ba1c90b0a6d003338ef696701e5 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_8931ea9a73dfdc93f6aaefbc92e0e2a2.setIcon(div_icon_21902ba1c90b0a6d003338ef696701e5);
+            
+    
+            var circle_marker_16d2bbe974e08b90fbc50d75c6492822 = L.circleMarker(
+                [48.8508493, 2.3506657],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_444f19a909ac737023d7c0b3a12d73c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e2ea50423850b63c149fed617f3722bb = $(`<div id="html_e2ea50423850b63c149fed617f3722bb" style="width: 100.0%; height: 100.0%;"><b>Cookies By Moon’s</b></div>`)[0];
+                popup_444f19a909ac737023d7c0b3a12d73c2.setContent(html_e2ea50423850b63c149fed617f3722bb);
+            
+        
+
+        circle_marker_16d2bbe974e08b90fbc50d75c6492822.bindPopup(popup_444f19a909ac737023d7c0b3a12d73c2)
+        ;
+
+        
+    
+    
+            circle_marker_16d2bbe974e08b90fbc50d75c6492822.bindTooltip(
+                `<div>
+                     Cookies By Moon’s
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c8ab60fb49b319af3d75e64a068b5d3f = L.marker(
+                [48.8508493, 2.3506657],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_a8e11bb059e42557d3dcec0e85083b21 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_c8ab60fb49b319af3d75e64a068b5d3f.setIcon(div_icon_a8e11bb059e42557d3dcec0e85083b21);
+            
+    
+            var circle_marker_18b515ccd1b8ad70abf7ed083691ae98 = L.circleMarker(
+                [48.8648592, 2.3459945],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a8937d", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_41db8dbd18830f2e315cd24236e26bfa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ba0fb09289f75e77b36325af609d73c9 = $(`<div id="html_ba0fb09289f75e77b36325af609d73c9" style="width: 100.0%; height: 100.0%;"><b>Copains</b></div>`)[0];
+                popup_41db8dbd18830f2e315cd24236e26bfa.setContent(html_ba0fb09289f75e77b36325af609d73c9);
+            
+        
+
+        circle_marker_18b515ccd1b8ad70abf7ed083691ae98.bindPopup(popup_41db8dbd18830f2e315cd24236e26bfa)
+        ;
+
+        
+    
+    
+            circle_marker_18b515ccd1b8ad70abf7ed083691ae98.bindTooltip(
+                `<div>
+                     Copains
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6901c3b0f01e50c714ba0c1899ac02fb = L.marker(
+                [48.8648592, 2.3459945],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_e414d357057808835b3d8383b78857db = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_6901c3b0f01e50c714ba0c1899ac02fb.setIcon(div_icon_e414d357057808835b3d8383b78857db);
+            
+    
+            var circle_marker_2db558aa4c83c7c12e30b8e441378106 = L.circleMarker(
+                [48.8651236, 2.3343463],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a8937d", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_21c845dc31ec855b222d3f72d580531f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_516f44b8a56fd5380fb0dd858881818f = $(`<div id="html_516f44b8a56fd5380fb0dd858881818f" style="width: 100.0%; height: 100.0%;"><b>Copains</b></div>`)[0];
+                popup_21c845dc31ec855b222d3f72d580531f.setContent(html_516f44b8a56fd5380fb0dd858881818f);
+            
+        
+
+        circle_marker_2db558aa4c83c7c12e30b8e441378106.bindPopup(popup_21c845dc31ec855b222d3f72d580531f)
+        ;
+
+        
+    
+    
+            circle_marker_2db558aa4c83c7c12e30b8e441378106.bindTooltip(
+                `<div>
+                     Copains
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a1051049970d0c61414ba3151207ca45 = L.marker(
+                [48.8651236, 2.3343463],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_5b2de309db1802ac5b681a5a51bc52d5 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_a1051049970d0c61414ba3151207ca45.setIcon(div_icon_5b2de309db1802ac5b681a5a51bc52d5);
+            
+    
+            var circle_marker_61598514cb005b9d3c139ad6e857646d = L.circleMarker(
+                [48.8678067, 2.3353976],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_71e313b9db94d71e05d4889673f02ba1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_075150d2d54332cee51714b92b2f9217 = $(`<div id="html_075150d2d54332cee51714b92b2f9217" style="width: 100.0%; height: 100.0%;"><b>Culottée Café</b></div>`)[0];
+                popup_71e313b9db94d71e05d4889673f02ba1.setContent(html_075150d2d54332cee51714b92b2f9217);
+            
+        
+
+        circle_marker_61598514cb005b9d3c139ad6e857646d.bindPopup(popup_71e313b9db94d71e05d4889673f02ba1)
+        ;
+
+        
+    
+    
+            circle_marker_61598514cb005b9d3c139ad6e857646d.bindTooltip(
+                `<div>
+                     Culottée Café
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b6deae94d5152bd14b6b967973e0b6b5 = L.marker(
+                [48.8678067, 2.3353976],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_b90183362a247e5f6f455273b00cb8ea = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_b6deae94d5152bd14b6b967973e0b6b5.setIcon(div_icon_b90183362a247e5f6f455273b00cb8ea);
+            
+    
+            var circle_marker_22760e546879046baf099ea1e2c40fcf = L.circleMarker(
+                [48.8706305, 2.3417919],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_bf75db2fe08be9b86d055659eb150f9d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_699600127f58e8fb9276ab98bd51eff9 = $(`<div id="html_699600127f58e8fb9276ab98bd51eff9" style="width: 100.0%; height: 100.0%;"><b>Culottée Café</b></div>`)[0];
+                popup_bf75db2fe08be9b86d055659eb150f9d.setContent(html_699600127f58e8fb9276ab98bd51eff9);
+            
+        
+
+        circle_marker_22760e546879046baf099ea1e2c40fcf.bindPopup(popup_bf75db2fe08be9b86d055659eb150f9d)
+        ;
+
+        
+    
+    
+            circle_marker_22760e546879046baf099ea1e2c40fcf.bindTooltip(
+                `<div>
+                     Culottée Café
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_058a83198365247a257819a923a16157 = L.marker(
+                [48.8706305, 2.3417919],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_35a288b61a199be2a8d32df4c3f65636 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_058a83198365247a257819a923a16157.setIcon(div_icon_35a288b61a199be2a8d32df4c3f65636);
+            
+    
+            var circle_marker_aa16831f74f75d9381f73e22c5f1c52c = L.circleMarker(
+                [48.8741426, 2.3159518],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_98be090df86b0674da347cdc9f65685d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee08e9c044973d0af1a94d9546b6f2a8 = $(`<div id="html_ee08e9c044973d0af1a94d9546b6f2a8" style="width: 100.0%; height: 100.0%;"><b>Culottée Café</b></div>`)[0];
+                popup_98be090df86b0674da347cdc9f65685d.setContent(html_ee08e9c044973d0af1a94d9546b6f2a8);
+            
+        
+
+        circle_marker_aa16831f74f75d9381f73e22c5f1c52c.bindPopup(popup_98be090df86b0674da347cdc9f65685d)
+        ;
+
+        
+    
+    
+            circle_marker_aa16831f74f75d9381f73e22c5f1c52c.bindTooltip(
+                `<div>
+                     Culottée Café
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6881c83fac1a687066cf666336530537 = L.marker(
+                [48.8741426, 2.3159518],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_7321a6347bb1f6b3a858aaf9f1735108 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_6881c83fac1a687066cf666336530537.setIcon(div_icon_7321a6347bb1f6b3a858aaf9f1735108);
+            
+    
+            var circle_marker_46a56f4e24619f39452897140b9a0c63 = L.circleMarker(
+                [48.84181699999999, 2.3139517],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_8a0e1fa3e204fcb98a877b892611d478 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bbaebfed7d4f91a4ea729dbad4a81154 = $(`<div id="html_bbaebfed7d4f91a4ea729dbad4a81154" style="width: 100.0%; height: 100.0%;"><b>Cyril Lignac Patisserie</b></div>`)[0];
+                popup_8a0e1fa3e204fcb98a877b892611d478.setContent(html_bbaebfed7d4f91a4ea729dbad4a81154);
+            
+        
+
+        circle_marker_46a56f4e24619f39452897140b9a0c63.bindPopup(popup_8a0e1fa3e204fcb98a877b892611d478)
+        ;
+
+        
+    
+    
+            circle_marker_46a56f4e24619f39452897140b9a0c63.bindTooltip(
+                `<div>
+                     Cyril Lignac Patisserie
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_32064b7a42f32fc796648fa893daecc0 = L.marker(
+                [48.84181699999999, 2.3139517],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_fc95c05ce16b1b7ece94bc4a7dc0fd8b = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_32064b7a42f32fc796648fa893daecc0.setIcon(div_icon_fc95c05ce16b1b7ece94bc4a7dc0fd8b);
+            
+    
+            var circle_marker_f2160bd40586ccfb9c14c8cd602e4e6d = L.circleMarker(
+                [48.85257900000001, 2.3850522],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_56e556f48916dfec614f46a7d86cff89 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f963af33a1b3470257885d25f55e7732 = $(`<div id="html_f963af33a1b3470257885d25f55e7732" style="width: 100.0%; height: 100.0%;"><b>Cyril Lignac Patisserie</b></div>`)[0];
+                popup_56e556f48916dfec614f46a7d86cff89.setContent(html_f963af33a1b3470257885d25f55e7732);
+            
+        
+
+        circle_marker_f2160bd40586ccfb9c14c8cd602e4e6d.bindPopup(popup_56e556f48916dfec614f46a7d86cff89)
+        ;
+
+        
+    
+    
+            circle_marker_f2160bd40586ccfb9c14c8cd602e4e6d.bindTooltip(
+                `<div>
+                     Cyril Lignac Patisserie
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_05d566079fd5cdcdf06dd60b8560c315 = L.marker(
+                [48.85257900000001, 2.3850522],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_9961bfd2f7b93efe9f61cd2d48a77485 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    6\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_05d566079fd5cdcdf06dd60b8560c315.setIcon(div_icon_9961bfd2f7b93efe9f61cd2d48a77485);
+            
+    
+            var circle_marker_c013341c7a6ee1579fa62caea69dea20 = L.circleMarker(
+                [48.85366090000001, 2.3387337],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_6778f83db6cbd74b4298cf24349fd0fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f9f446678960fcfc93ac13eacb917531 = $(`<div id="html_f9f446678960fcfc93ac13eacb917531" style="width: 100.0%; height: 100.0%;"><b>Holy Cookie</b></div>`)[0];
+                popup_6778f83db6cbd74b4298cf24349fd0fb.setContent(html_f9f446678960fcfc93ac13eacb917531);
+            
+        
+
+        circle_marker_c013341c7a6ee1579fa62caea69dea20.bindPopup(popup_6778f83db6cbd74b4298cf24349fd0fb)
+        ;
+
+        
+    
+    
+            circle_marker_c013341c7a6ee1579fa62caea69dea20.bindTooltip(
+                `<div>
+                     Holy Cookie
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_821e92555c01ebc271192e33ab33ad1d = L.marker(
+                [48.85366090000001, 2.3387337],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_9db4fa682f87dc508969784a33748372 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_821e92555c01ebc271192e33ab33ad1d.setIcon(div_icon_9db4fa682f87dc508969784a33748372);
+            
+    
+            var circle_marker_3e7eeb9b522f2f7c4c87b7af6c6ffa12 = L.circleMarker(
+                [48.85696770000001, 2.3589191],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_317525ed5cee183fa1e0021c092a89ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c95b82bfd76b7d8d4b4c05cd15aca71d = $(`<div id="html_c95b82bfd76b7d8d4b4c05cd15aca71d" style="width: 100.0%; height: 100.0%;"><b>Holy Cookie</b></div>`)[0];
+                popup_317525ed5cee183fa1e0021c092a89ff.setContent(html_c95b82bfd76b7d8d4b4c05cd15aca71d);
+            
+        
+
+        circle_marker_3e7eeb9b522f2f7c4c87b7af6c6ffa12.bindPopup(popup_317525ed5cee183fa1e0021c092a89ff)
+        ;
+
+        
+    
+    
+            circle_marker_3e7eeb9b522f2f7c4c87b7af6c6ffa12.bindTooltip(
+                `<div>
+                     Holy Cookie
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9d26131450e6a2eae6695c595bd8e709 = L.marker(
+                [48.85696770000001, 2.3589191],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_4647cddc45e4848b05c9233b43dad045 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_9d26131450e6a2eae6695c595bd8e709.setIcon(div_icon_4647cddc45e4848b05c9233b43dad045);
+            
+    
+            var circle_marker_60316a7458ba60001951e4556a4c8530 = L.circleMarker(
+                [48.8809512, 2.2992152],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_10d36a2ce21c6d0dae68682acff05e4d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f81bd78901d6d5e586a727cbc3a85f67 = $(`<div id="html_f81bd78901d6d5e586a727cbc3a85f67" style="width: 100.0%; height: 100.0%;"><b>Holy Cookie</b></div>`)[0];
+                popup_10d36a2ce21c6d0dae68682acff05e4d.setContent(html_f81bd78901d6d5e586a727cbc3a85f67);
+            
+        
+
+        circle_marker_60316a7458ba60001951e4556a4c8530.bindPopup(popup_10d36a2ce21c6d0dae68682acff05e4d)
+        ;
+
+        
+    
+    
+            circle_marker_60316a7458ba60001951e4556a4c8530.bindTooltip(
+                `<div>
+                     Holy Cookie
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_13a619cd0f77d0b176ce4fbd7425f1c4 = L.marker(
+                [48.8809512, 2.2992152],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_469301b9d20b8d244ee6f1b0add13938 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_13a619cd0f77d0b176ce4fbd7425f1c4.setIcon(div_icon_469301b9d20b8d244ee6f1b0add13938);
+            
+    
+            var circle_marker_e7cfe0994bc4562bcf9e50c889140dd0 = L.circleMarker(
+                [43.48177379999999, -1.5647039],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_17a0de012522a53146f4101c866bac4e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d57617a44a3ac6e1180a3f0a83228a4 = $(`<div id="html_6d57617a44a3ac6e1180a3f0a83228a4" style="width: 100.0%; height: 100.0%;"><b>Jaun café boutique</b></div>`)[0];
+                popup_17a0de012522a53146f4101c866bac4e.setContent(html_6d57617a44a3ac6e1180a3f0a83228a4);
+            
+        
+
+        circle_marker_e7cfe0994bc4562bcf9e50c889140dd0.bindPopup(popup_17a0de012522a53146f4101c866bac4e)
+        ;
+
+        
+    
+    
+            circle_marker_e7cfe0994bc4562bcf9e50c889140dd0.bindTooltip(
+                `<div>
+                     Jaun café boutique
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e98cc716886a6bdba013bda9bfa91385 = L.marker(
+                [43.48177379999999, -1.5647039],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_bc7169effa3dd2dde6721925919a3409 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_e98cc716886a6bdba013bda9bfa91385.setIcon(div_icon_bc7169effa3dd2dde6721925919a3409);
+            
+    
+            var circle_marker_f151ff1b6da9ed77800edb195869b03f = L.circleMarker(
+                [48.86435670000001, 2.3405462],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_7ff6b905a74fec0bfe59924dd434c616 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4087526af26b41cf39a40469fddfb21f = $(`<div id="html_4087526af26b41cf39a40469fddfb21f" style="width: 100.0%; height: 100.0%;"><b>Lactem</b></div>`)[0];
+                popup_7ff6b905a74fec0bfe59924dd434c616.setContent(html_4087526af26b41cf39a40469fddfb21f);
+            
+        
+
+        circle_marker_f151ff1b6da9ed77800edb195869b03f.bindPopup(popup_7ff6b905a74fec0bfe59924dd434c616)
+        ;
+
+        
+    
+    
+            circle_marker_f151ff1b6da9ed77800edb195869b03f.bindTooltip(
+                `<div>
+                     Lactem
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0d3c0a0cc5ac7d1d780eff2e7b160b71 = L.marker(
+                [48.86435670000001, 2.3405462],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_392eb6756ad84919660cf514d27bd6c8 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_0d3c0a0cc5ac7d1d780eff2e7b160b71.setIcon(div_icon_392eb6756ad84919660cf514d27bd6c8);
+            
+    
+            var circle_marker_14413eba52b893d5786cd1866c2deaea = L.circleMarker(
+                [48.8755507, 2.3407564],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_73254408dc2a248b06f832643087818c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_341c90bd8a4b548c98acdb7710834a9c = $(`<div id="html_341c90bd8a4b548c98acdb7710834a9c" style="width: 100.0%; height: 100.0%;"><b>Lactem</b></div>`)[0];
+                popup_73254408dc2a248b06f832643087818c.setContent(html_341c90bd8a4b548c98acdb7710834a9c);
+            
+        
+
+        circle_marker_14413eba52b893d5786cd1866c2deaea.bindPopup(popup_73254408dc2a248b06f832643087818c)
+        ;
+
+        
+    
+    
+            circle_marker_14413eba52b893d5786cd1866c2deaea.bindTooltip(
+                `<div>
+                     Lactem
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0b1d1a1e9401e1132268b1a3b770611a = L.marker(
+                [48.8755507, 2.3407564],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_3d20754468050e3efd8b0781954f1dd1 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_0b1d1a1e9401e1132268b1a3b770611a.setIcon(div_icon_3d20754468050e3efd8b0781954f1dd1);
+            
+    
+            var circle_marker_5b0ca334fd096b806bc0ca14251e9096 = L.circleMarker(
+                [48.8529992, 2.3346397],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_542f0b6cde152e7e28cb2f79854d2f8c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d2ed7dea9bc96cd2a1c67e7c1950fb3 = $(`<div id="html_7d2ed7dea9bc96cd2a1c67e7c1950fb3" style="width: 100.0%; height: 100.0%;"><b>Laura Todd</b></div>`)[0];
+                popup_542f0b6cde152e7e28cb2f79854d2f8c.setContent(html_7d2ed7dea9bc96cd2a1c67e7c1950fb3);
+            
+        
+
+        circle_marker_5b0ca334fd096b806bc0ca14251e9096.bindPopup(popup_542f0b6cde152e7e28cb2f79854d2f8c)
+        ;
+
+        
+    
+    
+            circle_marker_5b0ca334fd096b806bc0ca14251e9096.bindTooltip(
+                `<div>
+                     Laura Todd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a847714b1c9aa6c87c89606129c61311 = L.marker(
+                [48.8529992, 2.3346397],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_20462ea5a772881c7d5b842f473adc20 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_a847714b1c9aa6c87c89606129c61311.setIcon(div_icon_20462ea5a772881c7d5b842f473adc20);
+            
+    
+            var circle_marker_3dcb4f26ef7006c63877c947814186c3 = L.circleMarker(
+                [48.8619417, 2.340527],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_0ac15452326cb1e69245cbb39b15c90c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d30acdf82c6e82ea80fb598613d4f07b = $(`<div id="html_d30acdf82c6e82ea80fb598613d4f07b" style="width: 100.0%; height: 100.0%;"><b>Laura Todd</b></div>`)[0];
+                popup_0ac15452326cb1e69245cbb39b15c90c.setContent(html_d30acdf82c6e82ea80fb598613d4f07b);
+            
+        
+
+        circle_marker_3dcb4f26ef7006c63877c947814186c3.bindPopup(popup_0ac15452326cb1e69245cbb39b15c90c)
+        ;
+
+        
+    
+    
+            circle_marker_3dcb4f26ef7006c63877c947814186c3.bindTooltip(
+                `<div>
+                     Laura Todd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4a9ce5b4eec4ec7d2f39f6db90649855 = L.marker(
+                [48.8619417, 2.340527],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_eed9060e78d25d9c8f6d8b1975968d2d = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_4a9ce5b4eec4ec7d2f39f6db90649855.setIcon(div_icon_eed9060e78d25d9c8f6d8b1975968d2d);
+            
+    
+            var circle_marker_bac12b4f79ff5e5226b9dd5fa520fdd9 = L.circleMarker(
+                [48.862041700000006, 2.340627],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_772e618e845a3cf4cf2d52f085608a56 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a28ab0231eb12e28823261a726a6321a = $(`<div id="html_a28ab0231eb12e28823261a726a6321a" style="width: 100.0%; height: 100.0%;"><b>Laura Todd</b></div>`)[0];
+                popup_772e618e845a3cf4cf2d52f085608a56.setContent(html_a28ab0231eb12e28823261a726a6321a);
+            
+        
+
+        circle_marker_bac12b4f79ff5e5226b9dd5fa520fdd9.bindPopup(popup_772e618e845a3cf4cf2d52f085608a56)
+        ;
+
+        
+    
+    
+            circle_marker_bac12b4f79ff5e5226b9dd5fa520fdd9.bindTooltip(
+                `<div>
+                     Laura Todd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f47ba4b2ad041cbef5d5c6debc368979 = L.marker(
+                [48.862041700000006, 2.340627],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_a841c0581245bf2d8f9247794b8a13e9 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_f47ba4b2ad041cbef5d5c6debc368979.setIcon(div_icon_a841c0581245bf2d8f9247794b8a13e9);
+            
+    
+            var circle_marker_a963762e25b1625a6bcaa4f69b1cadb9 = L.circleMarker(
+                [48.8670096, 2.3473739],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_ef8c9d33549dba0c488bec242a1e481c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46e81610015cf0b33a0fe1746560b134 = $(`<div id="html_46e81610015cf0b33a0fe1746560b134" style="width: 100.0%; height: 100.0%;"><b>Laura Todd</b></div>`)[0];
+                popup_ef8c9d33549dba0c488bec242a1e481c.setContent(html_46e81610015cf0b33a0fe1746560b134);
+            
+        
+
+        circle_marker_a963762e25b1625a6bcaa4f69b1cadb9.bindPopup(popup_ef8c9d33549dba0c488bec242a1e481c)
+        ;
+
+        
+    
+    
+            circle_marker_a963762e25b1625a6bcaa4f69b1cadb9.bindTooltip(
+                `<div>
+                     Laura Todd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ad4214e2859a4916d765e1719422bf1a = L.marker(
+                [48.8670096, 2.3473739],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_dffe34594d585620f051441224fc5c9d = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_ad4214e2859a4916d765e1719422bf1a.setIcon(div_icon_dffe34594d585620f051441224fc5c9d);
+            
+    
+            var circle_marker_86ef3a386c399718b59e85e800153536 = L.circleMarker(
+                [48.8744074, 2.3181752],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_eaa96a6dea714922937c78c05afea67e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_888f854eae671be78be092011aa748b1 = $(`<div id="html_888f854eae671be78be092011aa748b1" style="width: 100.0%; height: 100.0%;"><b>Le BAB</b></div>`)[0];
+                popup_eaa96a6dea714922937c78c05afea67e.setContent(html_888f854eae671be78be092011aa748b1);
+            
+        
+
+        circle_marker_86ef3a386c399718b59e85e800153536.bindPopup(popup_eaa96a6dea714922937c78c05afea67e)
+        ;
+
+        
+    
+    
+            circle_marker_86ef3a386c399718b59e85e800153536.bindTooltip(
+                `<div>
+                     Le BAB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_abd86974bfbdc311f762b4fed58de392 = L.marker(
+                [48.8744074, 2.3181752],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_7e4a53b6da4f1584df8ed69b27ecaa53 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    5\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_abd86974bfbdc311f762b4fed58de392.setIcon(div_icon_7e4a53b6da4f1584df8ed69b27ecaa53);
+            
+    
+            var circle_marker_deff25ee13334796588b8ae9f08fd0b8 = L.circleMarker(
+                [48.874507400000006, 2.3184752000000004],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_032d6ecc9502b8d45f7d573e17d10503 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8483151657e077f2d20ae11d59e52fbc = $(`<div id="html_8483151657e077f2d20ae11d59e52fbc" style="width: 100.0%; height: 100.0%;"><b>Le BAB</b></div>`)[0];
+                popup_032d6ecc9502b8d45f7d573e17d10503.setContent(html_8483151657e077f2d20ae11d59e52fbc);
+            
+        
+
+        circle_marker_deff25ee13334796588b8ae9f08fd0b8.bindPopup(popup_032d6ecc9502b8d45f7d573e17d10503)
+        ;
+
+        
+    
+    
+            circle_marker_deff25ee13334796588b8ae9f08fd0b8.bindTooltip(
+                `<div>
+                     Le BAB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5f6ceb6a1069a061dfce7cde12d6082a = L.marker(
+                [48.874507400000006, 2.3184752000000004],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_3382eb8ec189b32f4a2357a966ed5c00 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_5f6ceb6a1069a061dfce7cde12d6082a.setIcon(div_icon_3382eb8ec189b32f4a2357a966ed5c00);
+            
+    
+            var circle_marker_afc33e5cbff4a7fc0b2a4d98c929ab06 = L.circleMarker(
+                [48.8817557, 2.3162767],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_ce54c88668a816f36735bce9d45e48ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f34d2e09de776a0c57143cd9f21ef45c = $(`<div id="html_f34d2e09de776a0c57143cd9f21ef45c" style="width: 100.0%; height: 100.0%;"><b>Maison Marque Levis</b></div>`)[0];
+                popup_ce54c88668a816f36735bce9d45e48ae.setContent(html_f34d2e09de776a0c57143cd9f21ef45c);
+            
+        
+
+        circle_marker_afc33e5cbff4a7fc0b2a4d98c929ab06.bindPopup(popup_ce54c88668a816f36735bce9d45e48ae)
+        ;
+
+        
+    
+    
+            circle_marker_afc33e5cbff4a7fc0b2a4d98c929ab06.bindTooltip(
+                `<div>
+                     Maison Marque Levis
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0c1ba5433a61f219d236c0195d81dad7 = L.marker(
+                [48.8817557, 2.3162767],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_b5fd4200136a75152b9b573190842c1a = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    10\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_0c1ba5433a61f219d236c0195d81dad7.setIcon(div_icon_b5fd4200136a75152b9b573190842c1a);
+            
+    
+            var circle_marker_13737da9862554fe8f21824fe4bb9915 = L.circleMarker(
+                [48.8706034, 2.3597106],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_cdfdc5643a1287fd7539122eef7613af = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3bbd7aedb066ebf6e7aed3b8528bfab = $(`<div id="html_c3bbd7aedb066ebf6e7aed3b8528bfab" style="width: 100.0%; height: 100.0%;"><b>Mamiche</b></div>`)[0];
+                popup_cdfdc5643a1287fd7539122eef7613af.setContent(html_c3bbd7aedb066ebf6e7aed3b8528bfab);
+            
+        
+
+        circle_marker_13737da9862554fe8f21824fe4bb9915.bindPopup(popup_cdfdc5643a1287fd7539122eef7613af)
+        ;
+
+        
+    
+    
+            circle_marker_13737da9862554fe8f21824fe4bb9915.bindTooltip(
+                `<div>
+                     Mamiche
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6ed26df3ace33271a2973f2af81cdd6c = L.marker(
+                [48.8706034, 2.3597106],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_8cfe44d426c255b58ec44bde52e0dc87 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_6ed26df3ace33271a2973f2af81cdd6c.setIcon(div_icon_8cfe44d426c255b58ec44bde52e0dc87);
+            
+    
+            var circle_marker_de10f14af30f8f800a2e033a78d9d61d = L.circleMarker(
+                [48.8800888, 2.3435419],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_5b2c029409f5f0616c87672d662552ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18c73065e2e7d8590dde5836a6bd10ec = $(`<div id="html_18c73065e2e7d8590dde5836a6bd10ec" style="width: 100.0%; height: 100.0%;"><b>Mamiche</b></div>`)[0];
+                popup_5b2c029409f5f0616c87672d662552ce.setContent(html_18c73065e2e7d8590dde5836a6bd10ec);
+            
+        
+
+        circle_marker_de10f14af30f8f800a2e033a78d9d61d.bindPopup(popup_5b2c029409f5f0616c87672d662552ce)
+        ;
+
+        
+    
+    
+            circle_marker_de10f14af30f8f800a2e033a78d9d61d.bindTooltip(
+                `<div>
+                     Mamiche
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_37f7810ea01b99b85a3f7fb4f9d41e8e = L.marker(
+                [48.8800888, 2.3435419],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_a8b98eab53720f981785b7c17b633445 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_37f7810ea01b99b85a3f7fb4f9d41e8e.setIcon(div_icon_a8b98eab53720f981785b7c17b633445);
+            
+    
+            var circle_marker_7f8d541ff0df35a372d28f1afb5e6000 = L.circleMarker(
+                [48.8677979, 2.3554379],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_0d584a0f0f10b8fcbae1e9a3b22d303c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f19bd9e0f5a319ad4fb7ecd07442eeea = $(`<div id="html_f19bd9e0f5a319ad4fb7ecd07442eeea" style="width: 100.0%; height: 100.0%;"><b>Melkies</b></div>`)[0];
+                popup_0d584a0f0f10b8fcbae1e9a3b22d303c.setContent(html_f19bd9e0f5a319ad4fb7ecd07442eeea);
+            
+        
+
+        circle_marker_7f8d541ff0df35a372d28f1afb5e6000.bindPopup(popup_0d584a0f0f10b8fcbae1e9a3b22d303c)
+        ;
+
+        
+    
+    
+            circle_marker_7f8d541ff0df35a372d28f1afb5e6000.bindTooltip(
+                `<div>
+                     Melkies
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7140a11b667d13e162b1954b61e64bab = L.marker(
+                [48.8677979, 2.3554379],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_dea46f2d846e645814e985ec95ee6ffd = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_7140a11b667d13e162b1954b61e64bab.setIcon(div_icon_dea46f2d846e645814e985ec95ee6ffd);
+            
+    
+            var circle_marker_7f2f12ba80346e2abb7b8ad163949391 = L.circleMarker(
+                [48.8660933, 2.3371774],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_0aff7348525e81dde410c1b9348a6878 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d22d349a825e15a29c6ec8a43a5894a = $(`<div id="html_2d22d349a825e15a29c6ec8a43a5894a" style="width: 100.0%; height: 100.0%;"><b>Micho</b></div>`)[0];
+                popup_0aff7348525e81dde410c1b9348a6878.setContent(html_2d22d349a825e15a29c6ec8a43a5894a);
+            
+        
+
+        circle_marker_7f2f12ba80346e2abb7b8ad163949391.bindPopup(popup_0aff7348525e81dde410c1b9348a6878)
+        ;
+
+        
+    
+    
+            circle_marker_7f2f12ba80346e2abb7b8ad163949391.bindTooltip(
+                `<div>
+                     Micho
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fb95a12f4c450a7e326a3ee1e6b77b93 = L.marker(
+                [48.8660933, 2.3371774],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_b9f0ce9cf95529c1f962c8367ab2d7be = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_fb95a12f4c450a7e326a3ee1e6b77b93.setIcon(div_icon_b9f0ce9cf95529c1f962c8367ab2d7be);
+            
+    
+            var circle_marker_ed765086bec853dcd49a03154e5662c8 = L.circleMarker(
+                [48.84486580000001, 2.3241527],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_6594b78b7e4ca29eb7c409698e6f9896 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41ccf2ac6752ad3c47c636c84da76a21 = $(`<div id="html_41ccf2ac6752ad3c47c636c84da76a21" style="width: 100.0%; height: 100.0%;"><b>Mie Amor</b></div>`)[0];
+                popup_6594b78b7e4ca29eb7c409698e6f9896.setContent(html_41ccf2ac6752ad3c47c636c84da76a21);
+            
+        
+
+        circle_marker_ed765086bec853dcd49a03154e5662c8.bindPopup(popup_6594b78b7e4ca29eb7c409698e6f9896)
+        ;
+
+        
+    
+    
+            circle_marker_ed765086bec853dcd49a03154e5662c8.bindTooltip(
+                `<div>
+                     Mie Amor
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f657d5295db56071027bc3f54aae91a6 = L.marker(
+                [48.84486580000001, 2.3241527],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_252a28362ca0135a41e84599ae1c7d07 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_f657d5295db56071027bc3f54aae91a6.setIcon(div_icon_252a28362ca0135a41e84599ae1c7d07);
+            
+    
+            var circle_marker_cd725b3ca49ec194aabe7d28e5017b3b = L.circleMarker(
+                [43.4815492, -1.5655981],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_f0791a814af5c4700aed577037ea2263 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_606e5690efa6d9609766b64f5510353e = $(`<div id="html_606e5690efa6d9609766b64f5510353e" style="width: 100.0%; height: 100.0%;"><b>Noisette Pâtisserie</b></div>`)[0];
+                popup_f0791a814af5c4700aed577037ea2263.setContent(html_606e5690efa6d9609766b64f5510353e);
+            
+        
+
+        circle_marker_cd725b3ca49ec194aabe7d28e5017b3b.bindPopup(popup_f0791a814af5c4700aed577037ea2263)
+        ;
+
+        
+    
+    
+            circle_marker_cd725b3ca49ec194aabe7d28e5017b3b.bindTooltip(
+                `<div>
+                     Noisette Pâtisserie
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4429d1650e872c7c32a79bb2a2d51a95 = L.marker(
+                [43.4815492, -1.5655981],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_760ba6d669c587c90b2cf960b5a83b29 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_4429d1650e872c7c32a79bb2a2d51a95.setIcon(div_icon_760ba6d669c587c90b2cf960b5a83b29);
+            
+    
+            var circle_marker_6ecef1257d39e8d3425c0766b5e55156 = L.circleMarker(
+                [48.87530450000001, 2.3483644],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_ad534b9e23c7b192a5c0e7648c32ea41 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d6fbcaabcaeae40e3c432b7f19cd847 = $(`<div id="html_3d6fbcaabcaeae40e3c432b7f19cd847" style="width: 100.0%; height: 100.0%;"><b>Pâtisserie Michalak</b></div>`)[0];
+                popup_ad534b9e23c7b192a5c0e7648c32ea41.setContent(html_3d6fbcaabcaeae40e3c432b7f19cd847);
+            
+        
+
+        circle_marker_6ecef1257d39e8d3425c0766b5e55156.bindPopup(popup_ad534b9e23c7b192a5c0e7648c32ea41)
+        ;
+
+        
+    
+    
+            circle_marker_6ecef1257d39e8d3425c0766b5e55156.bindTooltip(
+                `<div>
+                     Pâtisserie Michalak
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fb0741a33a21c5358136ada53eb16714 = L.marker(
+                [48.87530450000001, 2.3483644],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_ebfdd36304cbc4938b27fdaa4166977e = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    10\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_fb0741a33a21c5358136ada53eb16714.setIcon(div_icon_ebfdd36304cbc4938b27fdaa4166977e);
+            
+    
+            var circle_marker_5e9c5576da93cdb4e66fcc750e1a9ac1 = L.circleMarker(
+                [48.88056470000001, 2.2750554],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_951f22ec20a7f266e16eea1e4d112962 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bcba4f8da619a7078870bff3d8057510 = $(`<div id="html_bcba4f8da619a7078870bff3d8057510" style="width: 100.0%; height: 100.0%;"><b>Pâtisserie Michalak</b></div>`)[0];
+                popup_951f22ec20a7f266e16eea1e4d112962.setContent(html_bcba4f8da619a7078870bff3d8057510);
+            
+        
+
+        circle_marker_5e9c5576da93cdb4e66fcc750e1a9ac1.bindPopup(popup_951f22ec20a7f266e16eea1e4d112962)
+        ;
+
+        
+    
+    
+            circle_marker_5e9c5576da93cdb4e66fcc750e1a9ac1.bindTooltip(
+                `<div>
+                     Pâtisserie Michalak
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_447c9877477d8f7bb7d918e4258031e7 = L.marker(
+                [48.88056470000001, 2.2750554],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_bb233180e992d7547e07ca14efd3babc = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    10\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_447c9877477d8f7bb7d918e4258031e7.setIcon(div_icon_bb233180e992d7547e07ca14efd3babc);
+            
+    
+            var circle_marker_7258190c8324edf7f2a6f6e44afb3d04 = L.circleMarker(
+                [43.48109660000001, -1.5633598],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_b184e1d2fc32b174097310fb90e276c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_541503952132d4a5ecd23bd6eda6c248 = $(`<div id="html_541503952132d4a5ecd23bd6eda6c248" style="width: 100.0%; height: 100.0%;"><b>Pepite Cookie</b></div>`)[0];
+                popup_b184e1d2fc32b174097310fb90e276c7.setContent(html_541503952132d4a5ecd23bd6eda6c248);
+            
+        
+
+        circle_marker_7258190c8324edf7f2a6f6e44afb3d04.bindPopup(popup_b184e1d2fc32b174097310fb90e276c7)
+        ;
+
+        
+    
+    
+            circle_marker_7258190c8324edf7f2a6f6e44afb3d04.bindTooltip(
+                `<div>
+                     Pepite Cookie
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_45758018505e9ed7bfcbf4d90469eb63 = L.marker(
+                [43.48109660000001, -1.5633598],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_020e5e06e04742bb44ed84709da11a8c = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_45758018505e9ed7bfcbf4d90469eb63.setIcon(div_icon_020e5e06e04742bb44ed84709da11a8c);
+            
+    
+            var circle_marker_f2b7764b8b84515d851ef1e21da9d7c6 = L.circleMarker(
+                [48.86727339999999, 2.3441784],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_05931b73910702fac2c96292467e952e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f5bf78b24250b7e0c37fd13698009db1 = $(`<div id="html_f5bf78b24250b7e0c37fd13698009db1" style="width: 100.0%; height: 100.0%;"><b>Tartelettes</b></div>`)[0];
+                popup_05931b73910702fac2c96292467e952e.setContent(html_f5bf78b24250b7e0c37fd13698009db1);
+            
+        
+
+        circle_marker_f2b7764b8b84515d851ef1e21da9d7c6.bindPopup(popup_05931b73910702fac2c96292467e952e)
+        ;
+
+        
+    
+    
+            circle_marker_f2b7764b8b84515d851ef1e21da9d7c6.bindTooltip(
+                `<div>
+                     Tartelettes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_31a61368ba697334288ca0e1d88b242f = L.marker(
+                [48.86727339999999, 2.3441784],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_9ea51b1c80e784c7597e31fea3d073dd = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    5\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_31a61368ba697334288ca0e1d88b242f.setIcon(div_icon_9ea51b1c80e784c7597e31fea3d073dd);
+            
+    
+            var circle_marker_eed02f06914f4b08d49647c2dc5e2270 = L.circleMarker(
+                [48.8661515, 2.3362927],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_b21eda9fc93e380b57789995fd3a0a11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f6fe096d6800004a8c6cc2af3a713f87 = $(`<div id="html_f6fe096d6800004a8c6cc2af3a713f87" style="width: 100.0%; height: 100.0%;"><b>Télescope</b></div>`)[0];
+                popup_b21eda9fc93e380b57789995fd3a0a11.setContent(html_f6fe096d6800004a8c6cc2af3a713f87);
+            
+        
+
+        circle_marker_eed02f06914f4b08d49647c2dc5e2270.bindPopup(popup_b21eda9fc93e380b57789995fd3a0a11)
+        ;
+
+        
+    
+    
+            circle_marker_eed02f06914f4b08d49647c2dc5e2270.bindTooltip(
+                `<div>
+                     Télescope
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_06a014f9b45d13b7cbb572285dbd7858 = L.marker(
+                [48.8661515, 2.3362927],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_3a76c8caa8833efbe68a536778ed87c4 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    8\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_06a014f9b45d13b7cbb572285dbd7858.setIcon(div_icon_3a76c8caa8833efbe68a536778ed87c4);
+            
+    
+            var circle_marker_00ba1279957320f73d1e208ba0535f83 = L.circleMarker(
+                [48.8648095, 2.3748563],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_4e1a11b82a1ec4f1fa686a15ed5dc3b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_baaf16bf7ab87a90474ef3112e3d969c = $(`<div id="html_baaf16bf7ab87a90474ef3112e3d969c" style="width: 100.0%; height: 100.0%;"><b>The French Bastards</b></div>`)[0];
+                popup_4e1a11b82a1ec4f1fa686a15ed5dc3b5.setContent(html_baaf16bf7ab87a90474ef3112e3d969c);
+            
+        
+
+        circle_marker_00ba1279957320f73d1e208ba0535f83.bindPopup(popup_4e1a11b82a1ec4f1fa686a15ed5dc3b5)
+        ;
+
+        
+    
+    
+            circle_marker_00ba1279957320f73d1e208ba0535f83.bindTooltip(
+                `<div>
+                     The French Bastards
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_885dc2f9660ab683076677d6fff353fc = L.marker(
+                [48.8648095, 2.3748563],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_00a4de93e2b5a9223acac4b64fbf33b1 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_885dc2f9660ab683076677d6fff353fc.setIcon(div_icon_00a4de93e2b5a9223acac4b64fbf33b1);
+            
+    
+            var circle_marker_95edadcbebf19d64bc63851e2c383852 = L.circleMarker(
+                [48.8648095, 2.3728563],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_f66c402f9df925000aae042fb7d33382 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99fffb043335b0c56e1cc17afde76578 = $(`<div id="html_99fffb043335b0c56e1cc17afde76578" style="width: 100.0%; height: 100.0%;"><b>The French Bastards</b></div>`)[0];
+                popup_f66c402f9df925000aae042fb7d33382.setContent(html_99fffb043335b0c56e1cc17afde76578);
+            
+        
+
+        circle_marker_95edadcbebf19d64bc63851e2c383852.bindPopup(popup_f66c402f9df925000aae042fb7d33382)
+        ;
+
+        
+    
+    
+            circle_marker_95edadcbebf19d64bc63851e2c383852.bindTooltip(
+                `<div>
+                     The French Bastards
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f56c2c50dba4218a0e8154f2d37e4c6f = L.marker(
+                [48.8648095, 2.3728563],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_288df6eb89539a605cfa4f25e29ba454 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_f56c2c50dba4218a0e8154f2d37e4c6f.setIcon(div_icon_288df6eb89539a605cfa4f25e29ba454);
+            
+    
+            var circle_marker_d8fde3e8e1bf07679549a98b06f2a93e = L.circleMarker(
+                [48.86566289999999, 2.350312099999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_d462603991043e4d6dcffa608ea22c69 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a33f4dea4cfe97d2d3ddc0fd219f19b = $(`<div id="html_8a33f4dea4cfe97d2d3ddc0fd219f19b" style="width: 100.0%; height: 100.0%;"><b>The French Bastards</b></div>`)[0];
+                popup_d462603991043e4d6dcffa608ea22c69.setContent(html_8a33f4dea4cfe97d2d3ddc0fd219f19b);
+            
+        
+
+        circle_marker_d8fde3e8e1bf07679549a98b06f2a93e.bindPopup(popup_d462603991043e4d6dcffa608ea22c69)
+        ;
+
+        
+    
+    
+            circle_marker_d8fde3e8e1bf07679549a98b06f2a93e.bindTooltip(
+                `<div>
+                     The French Bastards
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ff2f6d8176841455a41feee9c91c9d74 = L.marker(
+                [48.86566289999999, 2.350312099999999],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_4eff66662e1891008ccc138accff94c7 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_ff2f6d8176841455a41feee9c91c9d74.setIcon(div_icon_4eff66662e1891008ccc138accff94c7);
+            
+    
+            var circle_marker_78e060f2fdecb9eda6ffb5ef8a22a3bd = L.circleMarker(
+                [48.86576289999999, 2.350512099999999],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_8febd5712465f8d95f7c247e2115443b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_57ab74b69f5888212f6a82c296ae1ee6 = $(`<div id="html_57ab74b69f5888212f6a82c296ae1ee6" style="width: 100.0%; height: 100.0%;"><b>The French Bastards</b></div>`)[0];
+                popup_8febd5712465f8d95f7c247e2115443b.setContent(html_57ab74b69f5888212f6a82c296ae1ee6);
+            
+        
+
+        circle_marker_78e060f2fdecb9eda6ffb5ef8a22a3bd.bindPopup(popup_8febd5712465f8d95f7c247e2115443b)
+        ;
+
+        
+    
+    
+            circle_marker_78e060f2fdecb9eda6ffb5ef8a22a3bd.bindTooltip(
+                `<div>
+                     The French Bastards
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8eff078dbea72d2dc4271262b150273a = L.marker(
+                [48.86576289999999, 2.350512099999999],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_c45c68eac2a4a1057ec5b8a2501a1854 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_8eff078dbea72d2dc4271262b150273a.setIcon(div_icon_c45c68eac2a4a1057ec5b8a2501a1854);
+            
+    
+            var circle_marker_af412dec63e0f9f286b84b4929195085 = L.circleMarker(
+                [48.8807115, 2.2798132],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2d08a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_327a61426672a77b271c43e2e220d6fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79ec992e34498e0aa613b315559e631f = $(`<div id="html_79ec992e34498e0aa613b315559e631f" style="width: 100.0%; height: 100.0%;"><b>The French Bastards</b></div>`)[0];
+                popup_327a61426672a77b271c43e2e220d6fe.setContent(html_79ec992e34498e0aa613b315559e631f);
+            
+        
+
+        circle_marker_af412dec63e0f9f286b84b4929195085.bindPopup(popup_327a61426672a77b271c43e2e220d6fe)
+        ;
+
+        
+    
+    
+            circle_marker_af412dec63e0f9f286b84b4929195085.bindTooltip(
+                `<div>
+                     The French Bastards
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_50da17318d0ebe4d7ec5a931dae99da4 = L.marker(
+                [48.8807115, 2.2798132],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_1957b90d982631f3f0f61d5516443498 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    9\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_50da17318d0ebe4d7ec5a931dae99da4.setIcon(div_icon_1957b90d982631f3f0f61d5516443498);
+            
+    
+            var circle_marker_ca53af88b2eb6c95aee505bc3fb70d07 = L.circleMarker(
+                [48.8807115, 2.2778132],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_cdb430fe3eb8eaa8459bf28811085a4b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b02fb84eeeafbe3057475b290513a87 = $(`<div id="html_0b02fb84eeeafbe3057475b290513a87" style="width: 100.0%; height: 100.0%;"><b>The French Bastards</b></div>`)[0];
+                popup_cdb430fe3eb8eaa8459bf28811085a4b.setContent(html_0b02fb84eeeafbe3057475b290513a87);
+            
+        
+
+        circle_marker_ca53af88b2eb6c95aee505bc3fb70d07.bindPopup(popup_cdb430fe3eb8eaa8459bf28811085a4b)
+        ;
+
+        
+    
+    
+            circle_marker_ca53af88b2eb6c95aee505bc3fb70d07.bindTooltip(
+                `<div>
+                     The French Bastards
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8df6456d797bbfbec159ed8bcfdd3e52 = L.marker(
+                [48.8807115, 2.2778132],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_408f2ad3322c474bab4d68c35574aedd = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    7\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_8df6456d797bbfbec159ed8bcfdd3e52.setIcon(div_icon_408f2ad3322c474bab4d68c35574aedd);
+            
+    
+            var circle_marker_066faf0b57528e3e12b87f040745e90d = L.circleMarker(
+                [48.8590042, 2.3498911],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffbf2", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13, "stroke": true, "weight": 0.5}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+        var popup_646b6f1c47a7148c5b285b44a15552a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01e33aedaceefd35a9c1aefaa9bb5333 = $(`<div id="html_01e33aedaceefd35a9c1aefaa9bb5333" style="width: 100.0%; height: 100.0%;"><b>We Dough</b></div>`)[0];
+                popup_646b6f1c47a7148c5b285b44a15552a4.setContent(html_01e33aedaceefd35a9c1aefaa9bb5333);
+            
+        
+
+        circle_marker_066faf0b57528e3e12b87f040745e90d.bindPopup(popup_646b6f1c47a7148c5b285b44a15552a4)
+        ;
+
+        
+    
+    
+            circle_marker_066faf0b57528e3e12b87f040745e90d.bindTooltip(
+                `<div>
+                     We Dough
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cda2bdc2f73908ac9dc72106def781eb = L.marker(
+                [48.8590042, 2.3498911],
+                {
+}
+            ).addTo(map_d27a7ba5a2986e8478c4eac288dae446);
+        
+    
+            var div_icon_ce3b939072d8e8b19f813dd66f2f3506 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    width: 12px;\n                    height: 6px;\n                    text-align: center;\n                    line-height: 12px;\n                    font-weight: bold;\n                    font-size: 12px;\n                    font-family: Didot;\n                    color: black;\n                \"\u003e\n                    10\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_cda2bdc2f73908ac9dc72106def781eb.setIcon(div_icon_ce3b939072d8e8b19f813dd66f2f3506);
             
 </script>
 </html>
