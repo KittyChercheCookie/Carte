@@ -38,6 +38,12 @@
       filter: drop-shadow(0 0 8px var(--brand)) saturate(1.15) !important;
     }
 
+      :root{
+      --logo-col: clamp(110px, 30vw, 42vw); /* largeur colonne logo */
+      --mobile-gap: 8px;                    /* espace entre logo et carte */
+    }
+
+
     /* Uniformiser la police et la taille des boutons (prend le dessus) */
     button,
     .btn,
@@ -372,10 +378,10 @@
       }
 
       .mobile-topbar{
-        position:fixed; left:auto; right:0; top:0; z-index:2000;
-        padding:12px; padding-top:calc(6px + env(safe-area-inset-top, 0px));
+        position:fixed; right:0; top:0; z-index:2000;
+        padding:6x; padding-top:calc(6px + env(safe-area-inset-top, 0px));
         background:#F6ECDF; border-bottom:1px solid #eee; box-shadow:0 2px 10px rgba(0,0,0,.04);
-        display:block; max-width:80vw;
+        display:block; max-width: 80vw; 
       }
 
                 /* Empêche le débordement du fond + gère l'alignement interne */
@@ -389,12 +395,16 @@
           justify-content: flex-start;      /* ⬅️ en HAUT de la carte */
           padding : 2px 14px 10px 14px;                /* ⬅️ espace haut/droite pour “centrer” visuellement dans le congé arrondi */
           gap: 8px;
+          width: 100%;
+          min-width: 0;
+          box-sizing: border-box;
         }
 
         /* Les rangées de boutons : à droite, bien alignées */
         .mobile-row,
         .mobile-toggle-row{
           display: flex !important;
+          flex-wrap: wrap;  
           justify-content: flex-end;        /* ⬅️ à droite */
           align-items: center;              /* ⬅️ verticalement au milieu de la rangée */
           gap: 8px;
@@ -404,7 +414,7 @@
         /* Ne pas étirer les boutons (sinon ils “touchent” le bord) */
         .mobile-row .btn,
         .mobile-toggle-row .btn{
-          flex: 0 0 48%;              /* les deux prennent chacun ~la moitié de la carte */
+          flex: 1 1 80px;              /* les deux prennent chacun ~la moitié de la carte */
           text-align: center;
           min-width: 100px;           /* garde une largeur mini cohérente */
           box-sizing: border-box;
@@ -420,21 +430,21 @@
             /* zone logo (prend l’espace libre à gauche) */
       .mobile-logo{
         position:fixed;
-        top:0;
-        left:0;
-        width:20vw;           /* l’autre portion de l’écran */
+        top:0; left:0;
+        width:var(--logo-col);           /* l’autre portion de l’écran */
         padding:6px;
         padding-top:calc(6px + env(safe-area-inset-top, 0px));
-        display:flex;
-        align-items:center;
-        justify-content:flex-start;
-        z-index:2001;         /* au-dessus de la carte */
+        display:flex; align-items:center; justify-content:flex-start;
+        z-index:2002;         /* au-dessus de la carte */
         background:transparent;
         pointer-events:none;  /* le logo ne bloque pas les clics sur la carte */
       }
       .mobile-logo img{
-        height:80px;
-        object-fit:contain;
+            display:block;
+            width:150%;                               /* s’adapte à 20vw */
+            height:auto;                              /* garde les proportions */
+            max-height:80px;                          /* évite de recouvrir les boutons */
+            object-fit:contain;
       }
       
 
