@@ -26,24 +26,13 @@
       --mark-low:  #D0DBE2;  
       --mark-mid:  #0D7ADD;  
       --mark-high: #D41683; 
-      
-        .leaflet-marker-icon.highlight {
-      filter: none !important;  /* S'assurer que la classe highlight a la priorité sur dimmed */
-      transform: translateY(-1px) scale(1.05);
-       }
+      --logo-col: clamp(110px, 30vw, 42vw); 
+      --mobile-gap: 8px;
     }
 
-        .leaflet-marker-icon.highlight.dimmed {
-      opacity: 1 !important;
-      filter: drop-shadow(0 0 8px var(--brand)) saturate(1.15) !important;
-    }
-
-      :root{
-      --logo-col: clamp(110px, 30vw, 42vw); /* largeur colonne logo */
-      --mobile-gap: 8px;                    /* espace entre logo et carte */
-    }
-
-
+    .leaflet-marker-icon.highlight { filter: none !important; transform: translateY(-1px) scale(1.05); }
+    .leaflet-marker-icon.highlight.dimmed { opacity: 1 !important; filter: drop-shadow(0 0 8px var(--brand)) saturate(1.15) !important; }
+       
     /* Uniformiser la police et la taille des boutons (prend le dessus) */
     button,
     .btn,
@@ -298,6 +287,84 @@
     .pill{ display:inline-block; background:#f3f4f6; color:#B77C3B; font-size:12px; padding:4px 8px; border-radius:999px; margin-right:6px; }
     .section-title{ font-weight:600; margin:14px 0 8px; }
 
+    /* =Personnalisation du PANEL mobile */
+   @media (max-width:768px){
+  /* Bottom-sheet panel : plus haut sur mobile */
+  #panel{
+    position: fixed;
+    left: 0; right: 0; bottom: 0; top: auto;
+    width: 100%;
+    height: 42dvh !important;                     /* ← ajuste ici (60–80dvh) */
+    max-height: calc(100dvh - env(safe-area-inset-top, 0px) - 8px);
+    transform: translateY(100%);
+    box-shadow: 0 -8px 24px rgba(0,0,0,.12);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+  }
+  #panel.active{ transform: translateY(0); }
+
+  /* Un peu moins de padding pour gagner de la place */
+  #panel header{ padding: 10px 12px; }
+  #panel .body{ padding: 10px 12px; }
+
+      /* Panneau mobile : titre + catégories côte à côte dans le header */
+      #panel header{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;   /* autorise un retour à la ligne si manque de place */
+        gap: 6px;
+      }
+      #panel header #p-title{
+        font-size: 13px;   /* ajuste si besoin */
+        line-height: 1.0;
+        margin: 0;
+      }
+      #panel header #p-pills{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin: 0;
+      }
+      #panel header #p-pills .pill{
+        font-size: 11px;
+        padding: 3px 6px;
+      }
+      /* Si jamais un #p-pills restait dans le body, on le masque sur mobile */
+      #panel .body #p-pills{ display: none !important; }
+
+      /* --- Sous-titre "Posts Instagram" --- */
+      .section-title {
+        font-size: 13px;       /* plus petit */
+        font-weight: 500;
+        color: #444;
+        margin-top: 4px;
+        margin-bottom: 6px; }
+      /* --- Texte d’adresse et d’infos --- */
+      #p-meta {font-size: 13px; line-height: 1.35;}
+      /* --- Posts Instagram (grille) --- */
+      #p-photos {
+        gap: 6px;
+      }
+      #p-photos a {
+        border-radius: 6px;
+        min-height: 80px;
+      }
+      #p-photos img {
+        height: 70px;
+      }
+      /* --- Corps général du panneau --- */
+      #panel .body {
+        padding: 10px 12px;  /* réduit l’espace intérieur */
+        font-size: 13px;     /* texte global plus petit */
+      }
+      /* --- Bouton de fermeture --- */
+      #panel header .close {
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+      }
+    }
+
     /* Reviews block */
          /* Boîte contenant les photos Instagram ou le message */
     #p-photos .reviews {
@@ -364,6 +431,7 @@
     @media (max-width:768px){
       .titlechip{ display:none; }
       #cta-desktop{ display:none; }
+
 
       /* Prevent iOS auto-zoom on focus by using >=16px */
       #search input[type="text"],
@@ -467,7 +535,6 @@
         border-top-left-radius:14px; border-top-right-radius:14px;
       }
       #panel.active{ transform:translateY(0); }
-
       .reviews{ max-height:none; overflow:visible; }
     }
 
@@ -646,6 +713,49 @@
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution:'&copy; OpenStreetMap & CARTO', subdomains:'abcd', maxZoom:20 }).addTo(map);
 
+    // === Mobile : afficher les catégories à côté du titre dans le header ===
+(function(){
+  const panelHeader = document.querySelector('#panel header');
+  const closeBtn    = document.getElementById('p-close');
+  const pillsEl     = document.getElementById('p-pills');
+  const originalParent = pillsEl ? pillsEl.parentElement : null;
+
+  if (!panelHeader || !pillsEl) return;
+
+  function placePillsInHeader(){
+    if (pillsEl.parentElement !== panelHeader){
+      // on place les catégories dans le header, juste avant le bouton fermer
+      panelHeader.insertBefore(pillsEl, closeBtn || null);
+    }
+  }
+  function placePillsBack(){
+    if (originalParent && pillsEl.parentElement !== originalParent){
+      originalParent.appendChild(pillsEl);
+    }
+  }
+  function syncPillsPlacement(){
+    if (window.matchMedia('(max-width: 768px)').matches){
+      placePillsInHeader();
+    } else {
+      placePillsBack();
+    }
+  }
+
+  // S'assurer que le placement reste correct après le rendu du panneau
+  const origUpdatePanel = window.updatePanel;
+  if (typeof origUpdatePanel === 'function'){
+    window.updatePanel = function(row){
+      const ret = origUpdatePanel.call(this, row);
+      syncPillsPlacement();
+      return ret;
+    };
+  }
+
+  // Initial + redimensionnement
+  syncPillsPlacement();
+  window.addEventListener('resize', () => setTimeout(syncPillsPlacement, 50));
+})();
+
 
 // ===== Helpers couleur (dégradé personnalisable) =====
 function cssVar(name, fallback){
@@ -731,16 +841,16 @@ function makeRestIcon(avg){
     }
 
     function simplePopup(row) {
-  const name = row.restaurant_name || '';
-  const addr = row.restaurant_adress || '';
-  const avg = row.avg_rating;
+    const name = row.restaurant_name || '';
+    const addr = row.restaurant_adress || '';
+    const avg = row.avg_rating;
 
   // Calcul du nombre de posts Instagram
   const rawInstagramPhotos = (row.instagram_photos || '').trim();  // Récupère la colonne instagram_photos
   const instagramUrls = rawInstagramPhotos
     .split(/[;,|]/)  // Sépare les différents liens par ;, , ou |
     .map(u => u.trim())
-    .filter(Boolean);  // Filtre les liens vides
+    .filter(Boolean); 
 
   const photoCnt = instagramUrls.length;  // Nombre de posts Instagram
 
@@ -754,7 +864,7 @@ function makeRestIcon(avg){
 
 
     //Photo insta
-            function renderInstagramPhotos(row){
+    function renderInstagramPhotos(row){
     const raw = (row.instagram_photos || '').trim();
     if (!raw) return emptyBox();
 
@@ -813,20 +923,10 @@ function makeRestIcon(avg){
     }
 
     // Fonction pour obtenir l'ID d'un post Instagram
-    function getInstagramPostId(url){
-        const match = url.match(/instagram\.com\/(?:p|reel|tv)\/([a-zA-Z0-9-_]+)/);
-        return match ? match[1] : '';
+    function getInstagramPostId(url){const match = url.match(/instagram\.com\/(?:p|reel|tv)\/([a-zA-Z0-9-_]+)/); return match ? match[1] : '';}
+    function isImageUrl(u){ return /\.(jpg|jpeg|png|webp|gif)(\?|#|$)/i.test(u) }
+    function isInstagramPostUrl(u){ return /instagram\.com\/(p|reel|tv)\//i.test(u); }
     }
-
-    function isImageUrl(u){
-        return /\.(jpg|jpeg|png|webp|gif)(\?|#|$)/i.test(u);
-    }
-
-    function isInstagramPostUrl(u){
-        return /instagram\.com\/(p|reel|tv)\//i.test(u);
-    }
-}
-
 
     // Découpe "Italien, Pizzeria; Sushi | Vegan" -> ["Italien","Pizzeria","Sushi","Vegan"]
     function parseFoodTypes(s){
@@ -858,7 +958,7 @@ function makeRestIcon(avg){
   const instagramUrls = rawInstagramPhotos
     .split(/[;,|]/)  // Sépare les différents liens par ;, , ou |
     .map(u => u.trim())
-    .filter(Boolean);  // Filtre les liens vides
+    .filter(Boolean);  
 
   const photoCnt = instagramUrls.length;  // Nombre de posts Instagram
 
@@ -960,8 +1060,6 @@ function makeRestIcon(avg){
       // recadrer un peu sur la boutique
       map.setView(marker.getLatLng(), Math.max(map.getZoom(), 15));
     }
-
-
 
     // ---------- UI refs ----------
     const filtersBox = document.getElementById('filters');
@@ -1081,7 +1179,6 @@ function makeRestIcon(avg){
     // Multi-select state
     const selectedFoods  = new Set();
     const selectedKeys   = new Set(); // kept for tokens UX
-
     function updateMSCount(countEl,selectedSet,values){
       if(selectedSet.size===0) countEl.textContent='';
       else if(selectedSet.size===values.length) countEl.textContent='(tous)';
@@ -1119,12 +1216,9 @@ function makeRestIcon(avg){
       const v=parseFloat(elRating.value);
       elRatingVal.textContent='≥ '+(Number.isInteger(v)?v.toFixed(0):v.toFixed(1));
       setRangeFill(elRating);
-
     }
     updateRatingLabel();
     setRangeFill(elRating);
-
-
     elRating.addEventListener('input',()=>{ updateRatingLabel(); resetSearchIfActive(); applyFilters(false); });
 
     // Tokens (kept)
@@ -1194,54 +1288,25 @@ function makeRestIcon(avg){
     foodSelectNone .addEventListener('click', selectNone('food'));
 
     // Filtering
-    function passFilters(row){
-      if (selectedName) {
-        const rowName = nameOf(row);
-        if (rowName !== selectedName) return false;
-      }
-      if(selectedKeys.size){
-        if(!selectedKeys.has(keyOf(row))) return false;
-      } else {
-        const q=norm(elSearch.value);
-        if(q){
-          const hay=norm((row.restaurant_name||'')+' '+(row.restaurant_adress||'')); if(!hay.includes(q)) return false;
-        }
-      }
-      const minRating=parseFloat(elRating.value);
-      const avg=Number(row.avg_rating);
-      if(minRating>0){ if(!Number.isFinite(avg) || avg<minRating) return false; }
-      if (selectedFoods.size) {
-          // Utilise le tableau déjà construit en étape 2, sinon retombe sur le parsing ad hoc
-          const tags = Array.isArray(row.food_types) ? row.food_types : parseFoodTypes(row.food_type);
-          const hasAny = tags.some(t => selectedFoods.has(t));
-          if (!hasAny) return false;
-        }
-      return true;
+    function passFilters(row) { 
+      if (selectedName) { const rowName = nameOf(row); if (rowName !== selectedName) return false; } 
+      if (selectedKeys.size) { if (!selectedKeys.has(keyOf(row))) return false; } 
+      else { const q = norm(elSearch.value); if (q) { const hay = norm((row.restaurant_name || '') + ' ' + (row.restaurant_adress || '')); if (!hay.includes(q)) return false; } } 
+      const minRating = parseFloat(elRating.value); const avg = Number(row.avg_rating); 
+      if (minRating > 0) { if (!Number.isFinite(avg) || avg < minRating) return false; } 
+      if (selectedFoods.size) { const tags = Array.isArray(row.food_types) ? row.food_types : parseFoodTypes(row.food_type); const hasAny = tags.some(t => selectedFoods.has(t)); if (!hasAny) return false; } 
+      return true; 
     }
 
-      function applyFilters(resetSelection = false) {
-  if (resetSelection) clearSelection(); // Efface la sélection si nécessaire.
-
-  all.markers.forEach(({ marker, data }) => {
-    const el = marker.getElement(); 
-    if (!el) return;
-    // Ne jamais griser les marqueurs en surbrillance (highlight)
-if (el.classList.contains('highlight')) {
-  el.classList.remove('dimmed');
-  return;
-}
-
-if (selectedMarker && selectedMarker === marker) {
-  el.classList.remove('dimmed');
-} else {
-  if (passFilters(data)) {
-    el.classList.remove('dimmed');
-  } else {
-    el.classList.add('dimmed');
-  }
-}
-  });
-}
+    function applyFilters(resetSelection = false) { 
+      if (resetSelection) clearSelection(); 
+      all.markers.forEach(({ marker, data }) => { 
+        const el = marker.getElement(); if (!el) return; 
+        if (el.classList.contains('highlight')) { el.classList.remove('dimmed'); return; } 
+        if (selectedMarker && selectedMarker === marker) { el.classList.remove('dimmed'); } 
+        else { if (passFilters(data)) { el.classList.remove('dimmed'); } else { el.classList.add('dimmed'); } } 
+      }); 
+    }
 
     function fitToFiltered(){
       const bounds=L.latLngBounds(); let added=0;
@@ -1335,8 +1400,7 @@ clearTokensBtn.addEventListener('click', (e)=>{
       } else {
         searchBox.classList.remove('mobile-hidden');
         filtersBox.classList.remove('mobile-hidden');
-        syncDesktopToggleLabels();
-      }
+        syncDesktopToggleLabels();}
     }
         toggleSearchMobileBtn?.addEventListener('click', ()=>{
       const nowVisible = searchBox.classList.contains('mobile-hidden');
@@ -1348,8 +1412,6 @@ clearTokensBtn.addEventListener('click', (e)=>{
       showFiltersMobile(nowVisible);
       setToggleLabel(toggleFiltersMobileBtn, nowVisible, 'Filtres');
     });
-
-
     function closeAllPopovers(){ closeAC(); closeAllMS(); }
 
     // Resize -> close autocomplete and sync labels
@@ -1368,12 +1430,9 @@ clearTokensBtn.addEventListener('click', (e)=>{
           r.food_types = parseFoodTypes(r.food_type);
           r.food_types.forEach(ft => foodSet.add(ft));
         });
-
         foodValues  = Array.from(foodSet).sort((a,b)=>a.localeCompare(b));
-
         renderMS(msFoodPanel, foodValues, selectedFoods, msFoodCount);
         addPanelEventIsolation();
-
         const bounds = L.latLngBounds();
         data.forEach(row=>{
           const lat=toNum(row.lat), lng=toNum(row.long);
@@ -1384,11 +1443,9 @@ clearTokensBtn.addEventListener('click', (e)=>{
           all.markers.push({marker,data:row,key:keyOf(row)});
           bounds.extend([lat,lng]);  // <- étend les limites pour inclure ce marqueur
           });
-
        if (!all.markers.length) {
           map.setView([office.lat, office.lng], defaultZoom);
         }
-
         updateRatingLabel(); applyFilters(false);
         syncDesktopToggleLabels();
         initMobileView();
