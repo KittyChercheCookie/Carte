@@ -33,6 +33,11 @@
        }
     }
 
+        .leaflet-marker-icon.highlight.dimmed {
+      opacity: 1 !important;
+      filter: drop-shadow(0 0 8px var(--brand)) saturate(1.15) !important;
+    }
+
     /* Uniformiser la police et la taille des boutons (prend le dessus) */
     button,
     .btn,
@@ -340,10 +345,6 @@
     .material-symbols-outlined{
       font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 28;
     }
-    /*.office-icon{
-      display:flex; align-items:center; justify-content:center;
-      color:#000; font-size:28px;
-    }
 
     /* Desktop-only */
     @media (min-width:769px){
@@ -482,9 +483,9 @@
       <h3>Recherche</h3>
       <div class="tokenbox">
         <div id="tok-container" class="tokenlist"></div>
-        <input id="f-search" type="text" placeholder="Rechercher une ville ou une boutique" autocomplete="off" />
+        <input id="f-search" type="text" placeholder="Rechercher une boutique" autocomplete="off" />
         <div id="ac" class="ac-list"></div>
-        <div class="token-actions"><button id="clear-tokens" class="btn-clear" style="display:none;">Désélectionner tout</button></div>
+        <div class="token-actions"><button id="clear-tokens" class="btn-clear" style="display:none;">Réinitialiser</button></div>
       </div>
     </div>
 
@@ -502,7 +503,7 @@
         <div class="row sliderrow">
           <label id="lbl-rating" for="f-rating">Note minimale</label>
           <div class="sliderwrap">
-            <input id="f-rating" type="range" min="0" max="5" step="0.5" value="0" />
+            <input id="f-rating" type="range" min="2" max="5" step="0.25" value="0" />
             <div><span id="f-rating-val">≥ 0</span> ★</div>
           </div>
         </div>
@@ -518,7 +519,7 @@
             <div class="ms-panel" id="ms-food-panel">
               <div class="ms-head">
                 <span>Catégorie</span>
-                <span><span class="link" id="food-select-all">Tout</span> · <span class="link" id="food-select-none">Aucun</span></span>
+                <span><span class="link" id="food-select-all"></span>  <span class="link" id="food-select-none"></span></span>
               </div>
             </div>
           </div>
@@ -535,10 +536,6 @@
   <!-- Mobile top bar -->
   <div class="mobile-topbar">
     <div id="cta-mobile" class="mobile-row">
-      <a class="btn" target="_blank" rel="noopener"
-        href="https://docs.google.com/forms/d/e/1FAIpQLScdts5SkpdBCrA6kztViRZJZlWkGzk_ziLOlr0MVxMzJQb83Q/viewform">
-        Une suggestion ?
-      </a>
     </div>
     <div class="mobile-toggle-row">
       <button id="toggle-search-mobile"  class="btn btn-outline btn-small">Recherche ▾</button>
@@ -639,12 +636,14 @@ function makeRestIcon(avg){
 
     // ====== State ======
     const all = { data: [], markers: [] };
-    let selectedMarker = null;
+    let selectedMarker = null; 
+    let selectedName = null;
 
     // ====== Helpers ======
     const toNum = v => { const n=parseFloat(String(v).replace(',', '.')); return Number.isFinite(n)?n:null; };
     const norm  = s => String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
     const keyOf = r => `${(r.restaurant_name||'').trim()} — ${(r.restaurant_adress||'').trim()}`;
+    const nameOf = r => String(r.restaurant_name || '').trim();
 
     function avgStarsHtml(avg){
       const n=Number(avg);
@@ -814,6 +813,7 @@ function makeRestIcon(avg){
 
 
     function clearSelection(){
+      selectedName = null;
       selectedMarker=null;
       all.markers.forEach(m=>m.marker.getElement()?.classList.remove('highlight'));
       document.getElementById('panel').classList.remove('active');
@@ -838,6 +838,55 @@ function makeRestIcon(avg){
         ev.originalEvent?.stopPropagation?.();
       });
     }
+
+    function selectMarkersByName(name){
+      selectedName = name;
+      const bounds = L.latLngBounds();
+      let count = 0;
+      all.markers.forEach(({ marker, data }) => {
+        if (nameOf(data) === name) {
+          const el = marker.getElement();
+          el?.classList.add('highlight');
+          el?.classList.remove('dimmed'); // au cas où
+          bounds.extend(marker.getLatLng());
+          count++;
+        }
+      });
+      applyFilters(false);
+      if (count > 1) {
+        map.fitBounds(bounds.pad(0.15), { maxZoom: 17 });
+      } else if (count === 1) {
+        map.fitBounds(bounds.pad(0.08), { maxZoom: 17 });
+      }
+      syncFiltersLock();
+    }
+
+      function selectMarkerByKey(key){
+      const entry = all.markers.find(m => m.key === key);
+      if(!entry) return;
+
+      // Dépinner et retirer le highlight des autres
+      all.markers.forEach(m => {
+        m.marker._pinned = false;
+        m.marker.getElement()?.classList.remove('highlight');
+      });
+
+      const { marker, data } = entry;
+
+      marker._pinned = true;
+      selectedMarker = marker;
+
+      // Affichage & UI
+      marker.openPopup();
+      marker.getElement()?.classList.add('highlight');
+      marker.getElement()?.classList.remove('dimmed'); // au cas où
+      updatePanel(data);
+
+      // recadrer un peu sur la boutique
+      map.setView(marker.getLatLng(), Math.max(map.getZoom(), 15));
+    }
+
+
 
     // ---------- UI refs ----------
     const filtersBox = document.getElementById('filters');
@@ -924,14 +973,19 @@ function makeRestIcon(avg){
     function openAC(){ elAC.style.display='block'; searchBox.classList.add('raise'); }
     function closeAC(){ elAC.style.display='none'; searchBox.classList.remove('raise'); }
     function updateACList(){
-      const q=norm(elSearch.value);
-      if(!q){ closeAC(); elAC.innerHTML=''; return; }
-      const options=all.data
-        .map(r=>({key:keyOf(r), hay:norm(keyOf(r))}))
-        .filter(o=>o.hay.includes(q))
-        .slice(0,20);
-      if(!options.length){ closeAC(); elAC.innerHTML=''; return; }
-      elAC.innerHTML=options.map(o=>`<div class="ac-item" data-key="${o.key}">${o.key}</div>`).join('');
+      const q = norm(elSearch.value);
+      if (!q){ closeAC(); elAC.innerHTML=''; return; }
+      const names = Array.from(
+        new Set(
+          all.data
+            .map(nameOf)
+            .filter(n => n && norm(n).includes(q))
+        )
+      ).slice(0, 20);
+      if (!names.length){ closeAC(); elAC.innerHTML=''; return; }
+      elAC.innerHTML = names
+        .map(n => `<div class="ac-item" data-name="${n}">${n}</div>`)
+        .join('');
       openAC();
     }
     elSearch.addEventListener('input', updateACList);
@@ -939,8 +993,14 @@ function makeRestIcon(avg){
     elSearch.addEventListener('blur', ()=>{ setTimeout(()=>closeAC(), 120); });
     document.addEventListener('click', (e)=>{ if(!elAC.contains(e.target) && e.target!==elSearch) closeAC(); });
     elAC.addEventListener('click',(e)=>{
-      const it=e.target.closest('.ac-item'); if(!it) return;
-      elSearch.value=it.dataset.key; closeAC(); applyFilters(true);
+      const it = e.target.closest('.ac-item'); 
+      if(!it) return;
+      const name = it.dataset.name;
+      elSearch.value = name;
+      closeAC();
+      selectedKeys.clear();
+      renderTokens();
+      selectMarkersByName(name);
     });
 
     // Multi-select state
@@ -994,23 +1054,20 @@ function makeRestIcon(avg){
 
     // Tokens (kept)
     function renderTokens(){
-      elTokBox.innerHTML='';
-      selectedKeys.forEach(k=>{
-        const div=document.createElement('div');
-        div.className='token';
-        div.innerHTML=`<span>${k}</span> <span class="x" title="Retirer">×</span>`;
-        div.querySelector('.x').addEventListener('click',()=>{
-          selectedKeys.delete(k); renderTokens(); syncFiltersLock(); applyFilters(true);
-        });
-        div.addEventListener('mousedown', e=>e.preventDefault());
-        elTokBox.appendChild(div);
-      });
-      clearTokensBtn.style.display = selectedKeys.size ? 'inline-block' : 'none';
-    }
+    elTokBox.innerHTML = '';
 
+    // Toujours visible + libellé "Réinitialiser"
+    clearTokensBtn.style.display = 'inline-block';
+    clearTokensBtn.textContent = 'Réinitialiser';
+}
+
+      clearTokensBtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    resetToInitialState();   // ta fonction de reset global
+  });
     function lockFilters(){ filtersBox.classList.add('locked'); /* Don't close multiselects when locking */ }
     function unlockFilters(){ filtersBox.classList.remove('locked'); }
-    function syncFiltersLock(){ if(selectedKeys.size>0) lockFilters(); else unlockFilters(); }
+    function syncFiltersLock(){ if (selectedName || selectedKeys.size > 0) lockFilters(); else unlockFilters();}
 
     function resetFiltersToDefaultIfUsed(){
       let changed=false;
@@ -1063,6 +1120,10 @@ function makeRestIcon(avg){
 
     // Filtering
     function passFilters(row){
+      if (selectedName) {
+        const rowName = nameOf(row);
+        if (rowName !== selectedName) return false;
+      }
       if(selectedKeys.size){
         if(!selectedKeys.has(keyOf(row))) return false;
       } else {
@@ -1089,18 +1150,21 @@ function makeRestIcon(avg){
   all.markers.forEach(({ marker, data }) => {
     const el = marker.getElement(); 
     if (!el) return;
+    // Ne jamais griser les marqueurs en surbrillance (highlight)
+if (el.classList.contains('highlight')) {
+  el.classList.remove('dimmed');
+  return;
+}
 
-    // Si le marqueur est sélectionné, il ne doit pas recevoir la classe "dimmed"
-    if (selectedMarker && selectedMarker === marker) {
-      el.classList.remove('dimmed');  // Enlever la classe dimmed du marqueur sélectionné
-    } else {
-      // Applique le filtre pour les autres marqueurs
-      if (passFilters(data)) {
-        el.classList.remove('dimmed');  // Marqueur visible
-      } else {
-        el.classList.add('dimmed');  // Marqueur grisé
-      }
-    }
+if (selectedMarker && selectedMarker === marker) {
+  el.classList.remove('dimmed');
+} else {
+  if (passFilters(data)) {
+    el.classList.remove('dimmed');
+  } else {
+    el.classList.add('dimmed');
+  }
+}
   });
 }
 
@@ -1112,6 +1176,30 @@ function makeRestIcon(avg){
       });
       if(added>0) map.fitBounds(bounds.pad(0.1),{maxZoom:17});
     }
+
+      // Fonction de réinitialisation complète 
+function resetToInitialState(){
+  selectedKeys.clear();
+  renderTokens();
+  elSearch.value = '';
+  closeAC();
+  unlockFilters();
+  elRating.value = 0;
+  updateRatingLabel();
+  selectedFoods.clear();
+  renderMS(msFoodPanel, foodValues, selectedFoods, msFoodCount);
+  closeAllMS();
+  clearSelection(); 
+  applyFilters(false);
+  map.setView([office.lat, office.lng], defaultZoom);
+  setTimeout(()=>map.invalidateSize(), 60);
+}
+
+// === Bouton "Désélectionner tout" ===
+clearTokensBtn.addEventListener('click', (e)=>{
+  e.preventDefault();
+  resetToInitialState();
+});
 
     // Reset & Zoom
     elResetBtn.addEventListener('click',()=>{
