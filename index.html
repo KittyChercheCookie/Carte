@@ -10,6 +10,14 @@
   <!-- Material Symbols (apartment) -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=apartment" />
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="Logo Mapping.png">
+  <link rel="manifest" href="manifest.json">
+
+
+
   <style>
     :root{
       --panel-width:380px;
@@ -24,8 +32,8 @@
       --font-ui: "Bahnschrift Condensed","Bahnschrift","Barlow Condensed","Arial Narrow",Arial,sans-serif;
       --font-size: 14px;
       --mark-low:  #D0DBE2;  
-      --mark-mid:  #0D7ADD;  
-      --mark-high: #D41683; 
+      --mark-mid:  #f1e183;  
+      --mark-high: #28c67c; 
       --logo-col: clamp(110px, 30vw, 42vw); 
       --mobile-gap: 8px;
     }
@@ -282,7 +290,6 @@
     #panel header h2{ margin:0; font-size:18px; line-height:1.2; }
     #panel header .close{ margin-left:auto; border:0; background:#f3f4f6; width:32px; height:32px; border-radius:8px; cursor:pointer; font-size:18px; }
     #panel .body{ padding:14px 18px; overflow-y:auto; -webkit-overflow-scrolling:touch; touch-action:pan-y; }
-
     .meta{ color:#6b7280; font-size:13px; display:grid; gap:4px; margin:6px 0 12px; }
     .pill{ display:inline-block; background:#f3f4f6; color:#B77C3B; font-size:12px; padding:4px 8px; border-radius:999px; margin-right:6px; }
     .section-title{ font-weight:600; margin:14px 0 8px; }
@@ -294,7 +301,7 @@
     position: fixed;
     left: 0; right: 0; bottom: 0; top: auto;
     width: 100%;
-    height: 42dvh !important;                     /* ← ajuste ici (60–80dvh) */
+    height: 40dvh !important;                     
     max-height: calc(100dvh - env(safe-area-inset-top, 0px) - 8px);
     transform: translateY(100%);
     box-shadow: 0 -8px 24px rgba(0,0,0,.12);
@@ -307,6 +314,29 @@
   #panel header{ padding: 10px 12px; }
   #panel .body{ padding: 10px 12px; }
 
+    #search.card:not(.collapsed),
+  #filters.card:not(.collapsed){
+    min-height: 32dvh;          /* ↑ hauteur minimale souhaitée */
+    max-height: 60dvh;          /* garde une borne haute raisonnable */
+    display: grid;              
+    grid-template-rows: auto 1fr;/* titre / contenu scrollable */
+  }
+
+  /* Le contenu interne devient scrollable, pas toute la page */
+  #search .tokenbox,
+  #filters #filters-body{
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    min-height: 0;              /* crucial pour que le 1fr puisse rétrécir */
+  }
+
+  /* Optionnel : un peu plus d’air dans les cartes sur mobile */
+  #search.card:not(.collapsed),
+  #filters.card:not(.collapsed){
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
       /* Panneau mobile : titre + catégories côte à côte dans le header */
       #panel header{
         display: flex;
@@ -315,7 +345,7 @@
         gap: 6px;
       }
       #panel header #p-title{
-        font-size: 13px;   /* ajuste si besoin */
+        font-size: 14px;   /* ajuste si besoin */
         line-height: 1.0;
         margin: 0;
       }
@@ -336,7 +366,7 @@
       .section-title {
         font-size: 13px;       /* plus petit */
         font-weight: 500;
-        color: #444;
+        color: #1b1b1b;
         margin-top: 4px;
         margin-bottom: 6px; }
       /* --- Texte d’adresse et d’infos --- */
