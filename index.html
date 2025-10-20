@@ -1511,6 +1511,7 @@ function resetToInitialState(){
   renderTokens();
   elSearch.value = '';
   closeAC();
+  clearTokensBtn.style.display = 'none';
   unlockFilters();
   elRating.value = 0;
   updateRatingLabel();
@@ -1523,11 +1524,6 @@ function resetToInitialState(){
   setTimeout(()=>map.invalidateSize(), 60);
 }
 
-// === Bouton "Désélectionner tout" ===
-clearTokensBtn.addEventListener('click', (e)=>{
-  e.preventDefault();
-  resetToInitialState();
-});
 
     // Reset & Zoom
     elResetBtn.addEventListener('click', (e) => {
@@ -1605,6 +1601,7 @@ elSearchReset?.addEventListener('click', (e)=>{
   e.stopPropagation();
   selectedKeys.clear();
   renderTokens();
+  clearTokensBtn.style.display = 'none';
   elSearch.value = '';
   closeAC();
   unlockFilters();
