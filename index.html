@@ -404,18 +404,17 @@
 
   /* Filtres : conserve la taille plus haute */
   #filters.card:not(.collapsed){
-    min-height: 32dvh;
-    max-height: 60dvh;
-    display: grid;
+    min-height: auto !important;
+    max-height: none !important;
+    display: block !important; 
     grid-template-rows: auto 1fr;
   }
 
   /* Le contenu interne devient scrollable, pas toute la page */
   #search .tokenbox,
   #filters #filters-body{
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    min-height: 0;              /* crucial pour que le 1fr puisse rétrécir */
+    overflow: visible !important;     /* pas de scroll interne */
+    min-height: 0 !important;
   }
 
   /* Optionnel : un peu plus d’air dans les cartes sur mobile */
