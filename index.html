@@ -1213,24 +1213,25 @@ function makeRestIcon(avg){
     const toggleFiltersDesktopBtn = document.getElementById('toggle-filters-desktop');
     const toggleSearchDesktopBtn  = document.getElementById('toggle-search-desktop');
 
-
-        function closeFiltersPanel(){
-  // Ferme les popovers éventuels
+function closeFiltersPanel(){
+  // ferme popovers
   closeAllMS();
-  // Fermer / masquer la carte des filtres selon le mode
-  if (window.matchMedia('(max-width: 768px)').matches){
-    // mobile : masquer la section
-    showFiltersMobile(false);
-  } else {
-    // desktop : collapse
-    if (!filtersBox.classList.contains('collapsed')){
-      filtersBox.classList.add('collapsed');
-    }
-    syncDesktopToggleLabels();
-  }
+  closeAC();
+
+  // force les 2 états de fermeture
+  filtersBox.classList.add('collapsed');      // desktop
+  filtersBox.classList.add('mobile-hidden');  // mobile
+
+  // met à jour les libellés des boutons de toggle
+  try { setToggleLabel(toggleFiltersMobileBtn, false, 'Filtres'); } catch {}
+  try { syncDesktopToggleLabels(); } catch {}
+
+  // retire tout focus visuel
+  document.activeElement?.blur();
+
   setTimeout(()=>map.invalidateSize(), 60);
 }
-
+        
 
 // === Mode inline du multiselect sur mobile ===
 function isMobile(){ 
@@ -1452,28 +1453,27 @@ window.addEventListener('resize', ()=>{
       }
     });
 
-    function selectAll(which){
-      return (e)=>{
-        e.preventDefault(); e.stopPropagation();
-        set.clear();
-        values.forEach(v => set.add(v));
-        renderMS(panel, values, set, countEl);
-        resetSearchIfActive();
-        applyFilters(true);
-      };
-    }
-    function selectNone(which){
-      return (e)=>{
-        e.preventDefault(); e.stopPropagation();
-        set.clear();
-        renderMS(panel, values, set, countEl);
-        resetSearchIfActive();
-        applyFilters(true);
-      };
-    }
+    // Handlers spécifiques au multiselect "Catégorie"
+function onFoodSelectAll(e){
+  e.preventDefault(); e.stopPropagation();
+  selectedFoods.clear();
+  foodValues.forEach(v => selectedFoods.add(v));
+  renderMS(msFoodPanel, foodValues, selectedFoods, msFoodCount);
+  resetSearchIfActive();
+  applyFilters(true);
+}
 
-    foodSelectAll  .addEventListener('click', selectAll('food'));
-    foodSelectNone .addEventListener('click', selectNone('food'));
+function onFoodSelectNone(e){
+  e.preventDefault(); e.stopPropagation();
+  selectedFoods.clear();
+  renderMS(msFoodPanel, foodValues, selectedFoods, msFoodCount);
+  resetSearchIfActive();
+  applyFilters(true);
+}
+
+// Brancher les clics
+foodSelectAll?.addEventListener('click', onFoodSelectAll);
+foodSelectNone?.addEventListener('click', onFoodSelectNone);
 
     // Filtering
     function passFilters(row) { 
@@ -1530,27 +1530,30 @@ clearTokensBtn.addEventListener('click', (e)=>{
 });
 
     // Reset & Zoom
-    elResetBtn.addEventListener('click', (e)=>{
-  e.preventDefault();       // empêche les effets par défaut
-  e.stopPropagation();      // empêche de déclencher autre chose
-  elSearch.value=''; 
-  closeAC(); 
-  selectedKeys.clear(); 
+    elResetBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  elSearch.value = '';
+  closeAC();
+  selectedKeys.clear();
   renderTokens();
-  elRating.value=0;  
-  updateRatingLabel(); 
+  elRating.value = 0;
+  updateRatingLabel();
   selectedFoods.clear();
   renderMS(msFoodPanel, foodValues, selectedFoods, msFoodCount);
-  closeAllMS();
-  unlockFilters(); 
+  unlockFilters();
   applyFilters(true);
   map.setView([office.lat, office.lng], defaultZoom);
-  closeAllPanels();          // 👈 ferme aussi Recherche et Filtres
-  document.activeElement?.blur(); // retire le focus visuel
-  setTimeout(()=>map.invalidateSize(),60);
+  // ferme le panneau
+  closeFiltersPanel();
 });
-    elZoomBtn.addEventListener('click',()=>{ applyFilters(false);  map.setView([office.lat, office.lng], defaultZoom); closeFiltersPanel();
- });
+// Valider (Filtres)
+elZoomBtn.addEventListener('click', () => {
+  applyFilters(false);
+  map.setView([office.lat, office.lng], defaultZoom);
+  // ferme le panneau
+  closeFiltersPanel();
+});
 
  // --- Helper : fermeture du panneau Recherche ---
 function closeSearchPanel(){
