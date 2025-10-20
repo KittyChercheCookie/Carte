@@ -3,20 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Material Symbols (apartment) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=apartment" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="apple-touch-icon" href="Logo Mapping.png">
-  <link rel="manifest" href="manifest.json">
-
-
 
   <style>
     :root{
@@ -32,8 +20,9 @@
       --font-ui: "Bahnschrift Condensed","Bahnschrift","Barlow Condensed","Arial Narrow",Arial,sans-serif;
       --font-size: 14px;
       --mark-low:  #D0DBE2;  
-      --mark-mid:  #f1e183;  
-      --mark-high: #28c67c; 
+      --mark-mid:  #fad993; 
+      --mark-mid2:  #b7e087;
+      --mark-high: #28bda9; 
       --logo-col: clamp(110px, 30vw, 42vw); 
       --mobile-gap: 8px;
     }
@@ -49,6 +38,20 @@
       font-size: var(--font-size) !important;
       line-height: 1.25; /* optionnel, pour garder le même rendu */
     }
+
+    #filters .actions,
+#search .actions{
+  display:grid; grid-template-columns:1fr 1fr; gap:10px; align-items:stretch; margin-top:4px;
+}
+#search .actions button{
+  border:0; background:var(--brand); color:#fff; padding:6px ; border-radius:8px; font-size:13px; cursor:pointer;
+}
+#filters .actions button:hover,
+#search .actions button:hover{ background:var(--brand-strong); }
+#filters .actions .reset,
+#search .actions .reset{ background:#f3f4f6; color:#111827; }
+#filters .actions .reset:hover,
+#search .actions .reset:hover{ background:#e5e7eb; }
 
     /* Global */
     *,*::before,*::after{ box-sizing:border-box; }
@@ -296,11 +299,89 @@
 
     /* =Personnalisation du PANEL mobile */
    @media (max-width:768px){
-  /* Bottom-sheet panel : plus haut sur mobile */
+  .multiselect.inline-mobile .ms-trigger{
+    display:none;                 /* on masque le "header" cliquable */
+  }
+  .multiselect.inline-mobile .ms-panel{
+    position: static;             /* plus de panneau flottant */
+    display: block !important;    /* toujours visible */
+    max-height: none;             
+    box-shadow: none;
+    border: 0;
+    padding: 0;                   /* look plus "intégré" à la carte */
+  }
+  
+    #ms-food {
+    padding: 5px 12px;        /* espace intérieur (haut/bas, gauche/droite) */
+    border: 1px solid #ddd;    /* bordure grise */
+    border-radius: 10px;       /* coins arrondis */
+    background: #ffffff;          /* fond blanc (ou #F6ECDF pour beige) */
+    font-size: 14px;           /* texte global à l'intérieur */
+  }
+  #ms-food .ms-trigger{
+    display: none !important;
+  }
+  #ms-food .ms-panel{
+    position: static !important;
+    display: block !important;
+    max-height: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+  }
+  #ms-food .ms-head {
+    font-size: 14px !important;     /* taille comme sur desktop */
+    font-weight: 600;               /* plus lisible */
+    color: #111827;                 /* couleur texte principale */
+    margin-bottom: 8px;             /* un peu d’espace en dessous */
+    padding :6px
+  }
+  #filters.raise{ box-shadow: none !important; }
+  #ms-food.multiselect{ z-index: auto !important; }
+
+
+    /* Le cadre autour du label + curseur */
+  #filters .sliderrow{
+    padding: 10px 12px;          /* espace intérieur */
+    border: 1px solid #ddd;      /* bordure */
+    border-radius: 10px;         /* coins arrondis */
+    background: #fff;            /* fond (aligné avec Catégorie) */
+    font-size: 14px;             /* texte lisible */
+    margin-bottom: 10px;         /* espace sous le cadre */
+  }
+
+  /* Le label "Note minimale" dans le cadre */
+  #filters .sliderrow #lbl-rating{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  /* Organisation du curseur + valeur */
+  #filters .sliderrow .sliderwrap{
+    display: grid;
+    grid-template-columns: 1fr auto; /* curseur / valeur */
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Renforce la lisibilité de la valeur (≥ 0 ★) */
+  #filters .sliderrow #f-rating-val{
+    font-weight: 600;
+  }
+
+  /* Optionnel : même “aération” horizontale que Catégorie */
+  #ms-food,                       /* encadré Catégorie */
+  #filters .sliderrow{            /* encadré Note minimale */
+    box-sizing: border-box;
+  }
+    /* Bottom-sheet panel : plus haut sur mobile */
   #panel{
     position: fixed;
-    left: 0; right: 0; bottom: 0; top: auto;
-    width: 100%;
+    left: 0; right: 0; bottom: 0; top: 0;
+    width: 100vw;
+    max-width: 100vw;
     height: 40dvh !important;                     
     max-height: calc(100dvh - env(safe-area-inset-top, 0px) - 8px);
     transform: translateY(100%);
@@ -314,12 +395,19 @@
   #panel header{ padding: 10px 12px; }
   #panel .body{ padding: 10px 12px; }
 
-    #search.card:not(.collapsed),
+    #search.card:not(.collapsed){
+    min-height: 10dvh;   /* hauteur minimale réduite */
+    max-height: 40dvh;   /* garde un plafond */
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  /* Filtres : conserve la taille plus haute */
   #filters.card:not(.collapsed){
-    min-height: 32dvh;          /* ↑ hauteur minimale souhaitée */
-    max-height: 60dvh;          /* garde une borne haute raisonnable */
-    display: grid;              
-    grid-template-rows: auto 1fr;/* titre / contenu scrollable */
+    min-height: 32dvh;
+    max-height: 60dvh;
+    display: grid;
+    grid-template-rows: auto 1fr;
   }
 
   /* Le contenu interne devient scrollable, pas toute la page */
@@ -440,14 +528,8 @@
     #p-photos { grid-template-columns: repeat(3, 1fr); }
     }
 
-
     /* Utility */
     .muted{ color:var(--muted); }
-
-    /* Material Symbols baseline + office icon styling */
-    .material-symbols-outlined{
-      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 28;
-    }
 
     /* Desktop-only */
     @media (min-width:769px){
@@ -476,24 +558,27 @@
       }
 
       .mobile-topbar{
-        position:fixed; right:0; top:0; z-index:2000;
-        padding:6x; padding-top:calc(6px + env(safe-area-inset-top, 0px));
-        background:#F6ECDF; border-bottom:1px solid #eee; box-shadow:0 2px 10px rgba(0,0,0,.04);
-        display:block; max-width: 80vw; 
+        position:fixed; left :0 ; right:0; top:0; height:70px ; z-index:2000;
+        background:#F6ECDF; border-bottom:1px solid #eee; box-shadow:0 2px 10px rgba(0,0,0,.04); 
+        display:block; width: 100vw; 
       }
 
-                /* Empêche le débordement du fond + gère l'alignement interne */
+
+
+    /* Empêche le débordement du fond + gère l'alignement interne */
         .mobile-topcard{
           /* style carte conservé */
+          border-radius: 0;
           overflow: hidden;                 /* pas de débordement du fond */
           background-clip: padding-box;     /* le fond ne passe pas sous la bordure */
           display: flex;
           flex-direction: column;
           align-items: flex-end;            /* ⬅️ contenu aligné à DROITE */
           justify-content: flex-start;      /* ⬅️ en HAUT de la carte */
-          padding : 2px 14px 10px 14px;                /* ⬅️ espace haut/droite pour “centrer” visuellement dans le congé arrondi */
+          padding : 2px 14px 10px 1px;                /* ⬅️ espace haut/droite pour “centrer” visuellement dans le congé arrondi */
           gap: 8px;
           width: 100%;
+          height : 70px;
           min-width: 0;
           box-sizing: border-box;
         }
@@ -501,12 +586,11 @@
         /* Les rangées de boutons : à droite, bien alignées */
         .mobile-row,
         .mobile-toggle-row{
-          display: flex !important;
-          flex-wrap: wrap;  
+          display: flex !important; 
           justify-content: flex-end;        /* ⬅️ à droite */
           align-items: center;              /* ⬅️ verticalement au milieu de la rangée */
           gap: 8px;
-          width: 100%;
+          width: 30%;
         }
 
         /* Ne pas étirer les boutons (sinon ils “touchent” le bord) */
@@ -520,9 +604,8 @@
 
         /* Le conteneur 70% à droite reste transparent (pour éviter le halo) */
         .mobile-topbar{
-          background: transparent !important;
-          box-shadow: none !important;
           border: 0 !important;
+          border-radius: 0 !important;
         }
 
             /* zone logo (prend l’espace libre à gauche) */
@@ -531,7 +614,7 @@
         top:0; left:0;
         width:var(--logo-col);           /* l’autre portion de l’écran */
         padding:6px;
-        padding-top:calc(6px + env(safe-area-inset-top, 0px));
+        padding-top:calc(7px + env(safe-area-inset-top, 0px));
         display:flex; align-items:center; justify-content:flex-start;
         z-index:2002;         /* au-dessus de la carte */
         background:transparent;
@@ -545,11 +628,10 @@
             object-fit:contain;
       }
       
-
       .mobile-row{ display:grid; grid-template-columns:1fr 1fr; gap:6px; }
       #cta-mobile .btn{ font-size:12.5px; padding:9px 10px; min-width:0; max-width:100%; }
 
-      .mobile-toggle-row{ margin-top:4px; display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+      .mobile-toggle-row{ margin-top:5px; display:grid; grid-template-columns:1fr 1fr; gap:4px; }
       .mobile-toggle-row .btn{ background:#fff; color:#111827; border:1px solid #e5e7eb; }
       .mobile-toggle-row .btn:hover{ background:#f8f8f8; }
       .mobile-toggle-row .btn.btn-small{ padding:8px 10px; font-size:12px; }
@@ -647,14 +729,25 @@
 
     <!-- Desktop SEARCH card (hidden by default) -->
     <div id="search" class="card collapsed mobile-hidden">
-      <h3>Recherche</h3>
-      <div class="tokenbox">
-        <div id="tok-container" class="tokenlist"></div>
-        <input id="f-search" type="text" placeholder="Rechercher une boutique" autocomplete="off" />
-        <div id="ac" class="ac-list"></div>
-        <div class="token-actions"><button id="clear-tokens" class="btn-clear" style="display:none;">Réinitialiser</button></div>
-      </div>
+  <h3>Recherche</h3>
+
+  <div class="tokenbox">
+    <div id="tok-container" class="tokenlist"></div>
+    <input id="f-search" type="text" placeholder="Rechercher une boutique" autocomplete="off" />
+    <div id="ac" class="ac-list"></div>
+
+    <div class="token-actions">
+      <button id="clear-tokens" class="btn-clear" type="button" style="display:none;">Réinitialiser</button>
     </div>
+  </div> <!-- fin .tokenbox -->
+
+  <!-- Barre d’actions Recherche (même structure que Filtres) -->
+  <div class="actions" style="grid-column:1 / -1;">
+    <button id="s-validate" type="button">Valider</button>
+    <button id="s-reset" class="reset" type="button">Réinitialiser</button>
+  </div>
+</div>
+
 
     <!-- Desktop FILTERS card (hidden by default) -->
     <div id="filters" class="card collapsed mobile-hidden">
@@ -693,8 +786,8 @@
         </div>
 
         <div class="actions" style="grid-column:1 / -1;">
-          <button id="f-zoom">Zoom sur les résultats</button>
-          <button id="f-reset" class="reset">Réinitialiser</button>
+          <button id="f-zoom">Valider</button>
+          <button id="f-reset" class="reset" type="button">Réinitialiser</button>
         </div>
       </div>
     </div>
@@ -724,7 +817,7 @@
     <div class="body">
       <div id="p-meta" class="meta"></div>
       <div id="p-pills"></div>
-      <div class="section-title">Posts Intagram</div>
+      <div class="section-title">Posts Instagram</div>
       <div id="p-photos"></div>
     </div>
   </aside>
@@ -810,19 +903,23 @@ function lerpColor(c1,c2,t){
  //Retourne une couleur selon la note (0–5) en interpolant sur 3 stops.
  function colorFromRating(avg){
   const low  = cssVar('--mark-low');  
-  const mid  = cssVar('--mark-mid');  
+  const mid  = cssVar('--mark-mid');
+  const mid2  = cssVar('--mark-mid2');
   const high = cssVar('--mark-high'); 
   const n = Number(avg);
   if(!Number.isFinite(n) || n <= 0) return '#9CA3AF'; 
   const clamped = Math.max(0, Math.min(5, n));
   if (clamped <= 2) {
     return low;
-  } else if (clamped <= 3.5) {
-    const t = (clamped - 2) / (3.5 - 2); 
+  } else if (clamped <= 3) {
+    const t = (clamped - 2) / (3 - 2); 
     return lerpColor(low, mid, t);
+  } else if (clamped <= 4) {
+    const t = (clamped - 3) / (4 - 3); 
+    return lerpColor(mid, mid2, t);
   } else {
-    const t = (clamped - 3.5) / (5 - 3.5); 
-    return lerpColor(mid, high, t);
+    const t = (clamped - 4) / (5 - 4); 
+    return lerpColor(mid2, high, t);
   }
 }
 
@@ -1117,6 +1214,66 @@ function makeRestIcon(avg){
     const toggleFiltersDesktopBtn = document.getElementById('toggle-filters-desktop');
     const toggleSearchDesktopBtn  = document.getElementById('toggle-search-desktop');
 
+
+        function closeFiltersPanel(){
+  // Ferme les popovers éventuels
+  closeAllMS();
+  // Fermer / masquer la carte des filtres selon le mode
+  if (window.matchMedia('(max-width: 768px)').matches){
+    // mobile : masquer la section
+    showFiltersMobile(false);
+  } else {
+    // desktop : collapse
+    if (!filtersBox.classList.contains('collapsed')){
+      filtersBox.classList.add('collapsed');
+    }
+    syncDesktopToggleLabels();
+  }
+  setTimeout(()=>map.invalidateSize(), 60);
+}
+
+
+// === Mode inline du multiselect sur mobile ===
+function isMobile(){ 
+  return window.matchMedia('(max-width: 768px)').matches; 
+}
+
+function syncCategoryInlineMode(){
+  if (isMobile()){
+    // Passe le multiselect Catégorie en mode inline
+    msFood.classList.add('inline-mobile');
+    // s'assurer qu'aucune logique "popover" ne s'active
+    msFood.classList.remove('open');
+    filtersBox.classList.remove('raise');
+  } else {
+    // Retour au comportement desktop (panneau flottant)
+    msFood.classList.remove('inline-mobile');
+  }
+}
+
+// Empêche l'ouverture/fermeture du panneau quand il est inline
+msFoodTrig.addEventListener('click', (e)=>{
+  if (msFood.classList.contains('inline-mobile')){
+    e.preventDefault();
+    e.stopPropagation();
+    return; // rien à ouvrir/fermer : la liste est déjà visible
+  }
+  // sinon, on garde ton comportement existant :
+  e.preventDefault();
+  e.stopPropagation();
+  toggleMS(msFood);
+});
+
+// Appels au bon moment
+syncCategoryInlineMode();
+
+// Quand la vue mobile/desktop change
+window.addEventListener('resize', ()=>{
+  setTimeout(()=>{
+    syncCategoryInlineMode();
+  }, 50);
+});
+
     // Mobile toggles
     const toggleSearchMobileBtn  = document.getElementById('toggle-search-mobile');
     const toggleFiltersMobileBtn = document.getElementById('toggle-filters-mobile');
@@ -1127,7 +1284,8 @@ function makeRestIcon(avg){
     /* ===== Multiselect toggle (inline; no portal) ===== */
     let currentOpenMS = null; // HTMLElement of .multiselect
     function openMS(container){
-      if(filtersBox.classList.contains('locked')) return;
+      if (container.classList.contains('inline-mobile')) return;
+        if(filtersBox.classList.contains('locked')) return;
       if(currentOpenMS && currentOpenMS !== container){
         currentOpenMS.classList.remove('open');
       }
@@ -1143,6 +1301,7 @@ function makeRestIcon(avg){
     }
     function toggleMS(container){
       if(filtersBox.classList.contains('locked')){ closeAllMS(); return; }
+     if (container.classList.contains('inline-mobile')) return;
       if(container.classList.contains('open')) closeMS(container);
       else openMS(container);
     }
@@ -1252,12 +1411,13 @@ function makeRestIcon(avg){
     elRating.addEventListener('input',()=>{ updateRatingLabel(); resetSearchIfActive(); applyFilters(false); });
 
     // Tokens (kept)
-    function renderTokens(){
-    elTokBox.innerHTML = '';
+  function renderTokens(){
+  elTokBox.innerHTML = '';
 
-    // Toujours visible + libellé "Réinitialiser"
-    clearTokensBtn.style.display = 'inline-block';
-    clearTokensBtn.textContent = 'Réinitialiser';
+  // Affiche le petit "Réinitialiser" UNIQUEMENT si nécessaire
+  const hasQueryOrTokens = selectedKeys.size > 0 || elSearch.value.trim() !== '';
+  clearTokensBtn.style.display = hasQueryOrTokens ? 'inline-block' : 'none';
+  clearTokensBtn.textContent = 'Réinitialiser';
 }
 
       clearTokensBtn.addEventListener('click', (e)=>{
@@ -1286,7 +1446,6 @@ function makeRestIcon(avg){
     }
 
     /* === Safer "Tout/Aucun" using live arrays (no stale closures) === */
-    // Avoid outside-close when clicking these links
     [foodSelectAll, foodSelectNone].forEach(el => {
       if(el){
         el.addEventListener('mousedown', e => e.stopPropagation());
@@ -1372,17 +1531,87 @@ clearTokensBtn.addEventListener('click', (e)=>{
 });
 
     // Reset & Zoom
-    elResetBtn.addEventListener('click',()=>{
-      elSearch.value=''; closeAC(); selectedKeys.clear(); renderTokens();
-      elRating.value=0;  updateRatingLabel(); selectedFoods.clear();
-      renderMS(msFoodPanel, foodValues, selectedFoods, msFoodCount);
-      closeAllMS();
-      unlockFilters(); applyFilters(true);
-      map.setView([office.lat, office.lng], defaultZoom);
-      setTimeout(()=>map.invalidateSize(),60);
-    });
-    elZoomBtn.addEventListener('click',()=>{ fitToFiltered(); });
+    elResetBtn.addEventListener('click', (e)=>{
+  e.preventDefault();       // empêche les effets par défaut
+  e.stopPropagation();      // empêche de déclencher autre chose
+  elSearch.value=''; 
+  closeAC(); 
+  selectedKeys.clear(); 
+  renderTokens();
+  elRating.value=0;  
+  updateRatingLabel(); 
+  selectedFoods.clear();
+  renderMS(msFoodPanel, foodValues, selectedFoods, msFoodCount);
+  closeAllMS();
+  unlockFilters(); 
+  applyFilters(true);
+  map.setView([office.lat, office.lng], defaultZoom);
+  closeAllPanels();          // 👈 ferme aussi Recherche et Filtres
+  document.activeElement?.blur(); // retire le focus visuel
+  setTimeout(()=>map.invalidateSize(),60);
+});
+    elZoomBtn.addEventListener('click',()=>{ applyFilters(false);  map.setView([office.lat, office.lng], defaultZoom); closeFiltersPanel();
+ });
 
+ // --- Helper : fermeture du panneau Recherche ---
+function closeSearchPanel(){
+  closeAC(); // ferme l’autocomplete
+  if (window.matchMedia('(max-width: 768px)').matches){
+    // mobile : masquer la section
+    showSearchMobile(false);
+  } else {
+    // desktop : collapse si ouvert
+    if (!searchBox.classList.contains('collapsed')){
+      searchBox.classList.add('collapsed');
+    }
+    syncDesktopToggleLabels();
+  }
+  setTimeout(()=>map.invalidateSize(), 60);
+}
+
+// --- Ferme les deux panneaux Recherche et Filtres (desktop + mobile) ---
+function closeAllPanels(){
+  closeAllMS();
+  closeAC();
+
+  if (window.matchMedia('(max-width: 768px)').matches){
+    showSearchMobile(false);
+    showFiltersMobile(false);
+  } else {
+    if (!searchBox.classList.contains('collapsed'))  searchBox.classList.add('collapsed');
+    if (!filtersBox.classList.contains('collapsed')) filtersBox.classList.add('collapsed');
+    syncDesktopToggleLabels();
+  }
+
+  // très utile contre les “effets de halo” focus/outline sur un bouton
+  document.activeElement?.blur();
+  setTimeout(()=>map.invalidateSize(), 60);
+}
+
+// --- Boutons Recherche ---
+const elSearchValidate = document.getElementById('s-validate');
+const elSearchReset    = document.getElementById('s-reset');
+
+elSearchValidate?.addEventListener('click', ()=>{
+  applyFilters(false);
+  map.setView([office.lat, office.lng], defaultZoom);
+  closeSearchPanel();
+});
+
+elSearchReset?.addEventListener('click', (e)=>{
+  e.preventDefault();
+  e.stopPropagation();
+  selectedKeys.clear();
+  renderTokens();
+  elSearch.value = '';
+  closeAC();
+  unlockFilters();
+  applyFilters(true);
+  map.setView([office.lat, office.lng], defaultZoom);
+  closeAllPanels();               
+  document.activeElement?.blur(); 
+  setTimeout(()=>map.invalidateSize(),60);
+});
     // Desktop visibility toggles
     function toggleFiltersDesktop(){
       const collapsed = filtersBox.classList.toggle('collapsed');
