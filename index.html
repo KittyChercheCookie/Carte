@@ -29,7 +29,14 @@
 
     .leaflet-marker-icon.highlight { filter: none !important; transform: translateY(-1px) scale(1.05); }
     .leaflet-marker-icon.highlight.dimmed { opacity: 1 !important; filter: drop-shadow(0 0 8px var(--brand)) saturate(1.15) !important; }
-       
+
+    #search .token-actions { 
+  display: none !important;
+}
+/* visible UNIQUEMENT quand le bloc #search a la classe .has-query */
+#search.has-query .token-actions #clear-tokens{ display:inline-block !important; }
+
+
     /* Uniformiser la police et la taille des boutons (prend le dessus) */
     button,
     .btn,
@@ -1352,7 +1359,12 @@ window.addEventListener('resize', ()=>{
     }
     elSearch.addEventListener('input', updateACList);
     elSearch.addEventListener('focus', updateACList);
-    elSearch.addEventListener('blur', ()=>{ setTimeout(()=>closeAC(), 120); });
+    elSearch.addEventListener('blur', ()=>{
+  setTimeout(()=>{
+    closeAC();        // ferme l’AC après le clic
+    renderTokens();   // <-- le “dernier filet” pour l’état du bouton Réinitialiser
+  }, 130);
+  });
     document.addEventListener('click', (e)=>{ if(!elAC.contains(e.target) && e.target!==elSearch) closeAC(); });
     elAC.addEventListener('click',(e)=>{
       const it = e.target.closest('.ac-item'); 
@@ -1414,9 +1426,12 @@ window.addEventListener('resize', ()=>{
   function renderTokens(){
   elTokBox.innerHTML = '';
 
-  // Affiche le petit "Réinitialiser" UNIQUEMENT si nécessaire
   const hasQueryOrTokens = selectedKeys.size > 0 || elSearch.value.trim() !== '';
-  clearTokensBtn.style.display = hasQueryOrTokens ? 'inline-block' : 'none';
+
+  // on pilote l’affichage via une classe sur #search (et plus via style.display)
+  searchBox.classList.toggle('has-query', hasQueryOrTokens);
+
+  // tu peux garder ce label si tu veux
   clearTokensBtn.textContent = 'Réinitialiser';
 }
 
@@ -1507,11 +1522,11 @@ foodSelectNone?.addEventListener('click', onFoodSelectNone);
 
       // Fonction de réinitialisation complète 
 function resetToInitialState(){
+    elSearch.value = '';
   selectedKeys.clear();
-  renderTokens();
-  elSearch.value = '';
   closeAC();
-  clearTokensBtn.style.display = 'none';
+  // 2) puis maj tokens
+  renderTokens();
   unlockFilters();
   elRating.value = 0;
   updateRatingLabel();
@@ -1523,7 +1538,6 @@ function resetToInitialState(){
   map.setView([office.lat, office.lng], defaultZoom);
   setTimeout(()=>map.invalidateSize(), 60);
 }
-
 
     // Reset & Zoom
     elResetBtn.addEventListener('click', (e) => {
@@ -1567,24 +1581,6 @@ function closeSearchPanel(){
   setTimeout(()=>map.invalidateSize(), 60);
 }
 
-// --- Ferme les deux panneaux Recherche et Filtres (desktop + mobile) ---
-function closeAllPanels(){
-  closeAllMS();
-  closeAC();
-
-  if (window.matchMedia('(max-width: 768px)').matches){
-    showSearchMobile(false);
-    showFiltersMobile(false);
-  } else {
-    if (!searchBox.classList.contains('collapsed'))  searchBox.classList.add('collapsed');
-    if (!filtersBox.classList.contains('collapsed')) filtersBox.classList.add('collapsed');
-    syncDesktopToggleLabels();
-  }
-
-  // très utile contre les “effets de halo” focus/outline sur un bouton
-  document.activeElement?.blur();
-  setTimeout(()=>map.invalidateSize(), 60);
-}
 
 // --- Boutons Recherche ---
 const elSearchValidate = document.getElementById('s-validate');
@@ -1599,16 +1595,18 @@ elSearchValidate?.addEventListener('click', ()=>{
 elSearchReset?.addEventListener('click', (e)=>{
   e.preventDefault();
   e.stopPropagation();
-  selectedKeys.clear();
-  renderTokens();
-  clearTokensBtn.style.display = 'none';
+  // 1) vider d’abord
   elSearch.value = '';
+  selectedKeys.clear();
   closeAC();
+  // 2) puis recalculer l’UI des tokens (qui masquera le petit bouton)
+  renderTokens();
+  // (pas besoin du style.display ici)
   unlockFilters();
   applyFilters(true);
   map.setView([office.lat, office.lng], defaultZoom);
-  closeAllPanels();               
-  document.activeElement?.blur(); 
+  closeAllPanels();
+  document.activeElement?.blur();
   setTimeout(()=>map.invalidateSize(),60);
 });
     // Desktop visibility toggles
@@ -1678,6 +1676,25 @@ elSearchReset?.addEventListener('click', (e)=>{
       setTimeout(()=>{ initMobileView(); syncDesktopToggleLabels(); map.invalidateSize(); }, 60); 
     });
 
+    
+// --- Ferme les deux panneaux Recherche et Filtres (desktop + mobile) ---
+function closeAllPanels(){
+  closeAllMS();
+  closeAC();
+
+  if (window.matchMedia('(max-width: 768px)').matches){
+    showSearchMobile(false);
+    showFiltersMobile(false);
+  } else {
+    if (!searchBox.classList.contains('collapsed'))  searchBox.classList.add('collapsed');
+    if (!filtersBox.classList.contains('collapsed')) filtersBox.classList.add('collapsed');
+    syncDesktopToggleLabels();
+  }
+
+  // très utile contre les “effets de halo” focus/outline sur un bouton
+  document.activeElement?.blur();
+  setTimeout(()=>map.invalidateSize(), 60);
+}
     // Data load
     Papa.parse(csvUrl,{
       download:true, header:true, skipEmptyLines:true,
